@@ -44,3 +44,32 @@ function local_edwisertranslate_should_display(): bool
     }
     return false;
 }
+
+//navbar
+function local_edwisertranslate_render_navbar_output(): string
+{
+    global $PAGE, $OUTPUT;
+    $placement = get_config('local_edwisertranslate', 'placement');
+
+    //header is 0
+    if ($placement == 1) {
+        return '';
+    }
+
+    if (!local_edwisertranslate_should_display()) {
+        return '';
+    }
+
+    $context = [
+        'is_footer' => false,
+        'appearance' => get_config('local_edwisertranslate', 'appearance')
+
+    ];
+
+    //js module
+    $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);
+
+    // output to mustache file
+    return $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
+}
+
