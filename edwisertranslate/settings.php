@@ -70,6 +70,22 @@ if ($hassiteconfig) {
                 1 => get_string('footer', 'local_edwisertranslate')
             )
         ));
+
+        // Choose where the icon should appear on your site.
+        $name = 'local_edwisertranslate/showicon';
+        $title = get_string('showicon', 'local_edwisertranslate');
+        $description = get_string('showicon_desc', 'local_edwisertranslate');
+        $default = 0;
+        $settings->add(new admin_setting_configselect(
+            $name,
+            $title,
+            $description,
+            $default,
+            array(
+                0 => get_string('across_site', 'local_edwisertranslate'),
+                1 => get_string('coursepage', 'local_edwisertranslate')
+            )
+        ));
     }
     $ADMIN->add('localplugins', $settings);
 }

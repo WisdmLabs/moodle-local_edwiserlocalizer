@@ -33,3 +33,7 @@ $string['placement'] = 'Placement';
 $string['placement_desc'] = 'Choose where the icon should appear on your site.';
 $string['header'] = 'Header';
 $string['footer'] = 'Footer';
+$string['showicon'] = 'Show Icon';
+$string['showicon_desc'] = 'Show icon across site or only on course pages.';
+$string['across_site'] = 'Across site';
+$string['coursepage'] = 'Course page';
