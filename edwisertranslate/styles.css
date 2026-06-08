@@ -1,0 +1,9 @@
+#page-admin-setting-local_edwisertranslate {
+    #admin-translateto {
+        .defaultsnext {
+            display: flex !important;
+            flex-direction: column-reverse !important;
+            width: 25% !important;
+        }
+    }
+}
