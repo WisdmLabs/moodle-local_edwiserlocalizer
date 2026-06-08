@@ -29,3 +29,7 @@ $string['pluginname'] = 'Edwiser Translation';
 $string['local_edwisertranslate'] = 'Edwiser Translation';
 $string['enable'] = 'Enable';
 $string['enable_desc'] = 'Enabling this will display the language translation on your site.';
+$string['placement'] = 'Placement';
+$string['placement_desc'] = 'Choose where the icon should appear on your site.';
+$string['header'] = 'Header';
+$string['footer'] = 'Footer';

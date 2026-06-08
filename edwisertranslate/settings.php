@@ -55,6 +55,21 @@ if ($hassiteconfig) {
         $default = true;
         $settings->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
 
+        // Choose where the icon should appear on your site.
+        $name = 'local_edwisertranslate/placement';
+        $title = get_string('placement', 'local_edwisertranslate');
+        $description = get_string('placement_desc', 'local_edwisertranslate');
+        $default = 0;
+        $settings->add(new admin_setting_configselect(
+            $name,
+            $title,
+            $description,
+            $default,
+            array(
+                0 => get_string('header', 'local_edwisertranslate'),
+                1 => get_string('footer', 'local_edwisertranslate')
+            )
+        ));
     }
     $ADMIN->add('localplugins', $settings);
 }
