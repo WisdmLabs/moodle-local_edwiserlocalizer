@@ -21,3 +21,26 @@
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+// plugin should display or not based on show icon
+function local_edwisertranslate_should_display(): bool
+{
+    global $PAGE;
+    // plugin is on/off
+    $isenabled = get_config('local_edwisertranslate', 'enable');
+    if ($isenabled == 0) {
+        return false;
+    }
+
+    // plugin is set across the site or course page
+    $scope = get_config('local_edwisertranslate', 'showicon');
+    if ($scope == 0) {
+        return true;
+    }
+    if ($scope == 1) {
+        if ($PAGE->context->contextlevel == CONTEXT_COURSE || $PAGE->course->id > SITEID) {
+            return true;
+        }
+    }
+    return false;
+}
