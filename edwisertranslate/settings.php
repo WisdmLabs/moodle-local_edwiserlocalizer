@@ -22,3 +22,29 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Harshal Thakare
  */
+
+defined('MOODLE_INTERNAL') || die();
+
+
+
+$pluginname = get_string('pluginname', 'local_edwisertranslate');
+
+if ($hassiteconfig) {
+
+    // Create plugin category under Local plugins.
+    $ADMIN->add(
+        'localplugins',
+        new admin_category(
+            'local_edwisertranslate_settings',
+            get_string('pluginname', 'local_edwisertranslate')
+        )
+    );
+
+    // Create settings page.
+    $settings = new admin_settingpage(
+        'local_edwisertranslate',
+        get_string('pluginname', 'local_edwisertranslate')
+    );
+
+    $ADMIN->add('localplugins', $settings);
+}
