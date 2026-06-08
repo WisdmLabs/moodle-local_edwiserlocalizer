@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-
+use core_admin\local\settings\autocomplete;
 
 $pluginname = get_string('pluginname', 'local_edwisertranslate');
 
@@ -220,6 +220,23 @@ if ($hassiteconfig) {
                 'manageurl'       => false,
                 'managetext'      => false,
             ]
+        ));
+
+
+        // Choose the appearance of the language switcher to match your site.
+        $name = 'local_edwisertranslate/appearance';
+        $title = get_string('appearance', 'local_edwisertranslate');
+        $description = get_string('appearance_desc', 'local_edwisertranslate');
+        $default = 0;
+        $settings->add(new admin_setting_configselect(
+            $name,
+            $title,
+            $description,
+            $default,
+            array(
+                0 => get_string('light', 'local_edwisertranslate'),
+                1 => get_string('dark', 'local_edwisertranslate')
+            )
         ));
     }
     $ADMIN->add('localplugins', $settings);

@@ -40,3 +40,7 @@ $string['coursepage'] = 'Course page';
 $string['translateto'] = 'Translate To';
 $string['translateto_desc'] = 'The original language is the language in which your website is written.';
 $string['chooselanguages'] = 'Choose Languages';
+$string['appearance'] = 'Appearance';
+$string['appearance_desc'] = 'Choose the appearance of the language switcher to match your site.';
+$string['light'] = 'Light';
+$string['dark'] = 'Dark';
