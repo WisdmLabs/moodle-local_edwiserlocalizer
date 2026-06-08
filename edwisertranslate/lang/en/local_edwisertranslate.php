@@ -37,3 +37,6 @@ $string['showicon'] = 'Show Icon';
 $string['showicon_desc'] = 'Show icon across site or only on course pages.';
 $string['across_site'] = 'Across site';
 $string['coursepage'] = 'Course page';
+$string['translateto'] = 'Translate To';
+$string['translateto_desc'] = 'The original language is the language in which your website is written.';
+$string['chooselanguages'] = 'Choose Languages';
