@@ -46,5 +46,15 @@ if ($hassiteconfig) {
         get_string('pluginname', 'local_edwisertranslate')
     );
 
+    if ($ADMIN->fulltree) {
+
+        // Enabling this will display the language translation on your site.
+        $name = 'local_edwisertranslate/enable';
+        $title = get_string('enable', 'local_edwisertranslate');
+        $description = get_string('enable_desc', 'local_edwisertranslate');
+        $default = true;
+        $settings->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
+
+    }
     $ADMIN->add('localplugins', $settings);
 }

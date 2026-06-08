@@ -26,3 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Edwiser Translation';
+$string['local_edwisertranslate'] = 'Edwiser Translation';
+$string['enable'] = 'Enable';
+$string['enable_desc'] = 'Enabling this will display the language translation on your site.';
