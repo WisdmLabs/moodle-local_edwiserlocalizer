@@ -73,3 +73,24 @@ function local_edwisertranslate_render_navbar_output(): string
     return $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
 }
 
+function local_edwisertranslate_before_footer(): string
+{
+    global $PAGE, $OUTPUT;
+    // footer is 1
+    $footer = get_config('local_edwisertranslate', 'placement');
+    if ($footer == 0) {
+        return '';
+    }
+
+    if (!local_edwisertranslate_should_display()) {
+        return '';
+    }
+
+    $context = [
+        'is_footer' => true,
+        'appearance' => get_config('local_edwisertranslate', 'appearance')
+        //language list
+    ];
+    $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);
+    return $OUTPUT->render_from_template('local_edwiserlanguagetranslation/lang_switcher', $context);
+}
