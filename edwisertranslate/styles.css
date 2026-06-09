@@ -7,3 +7,10 @@
         }
     }
 }
+#page-footer {
+    #footer-column-1 {
+        a {
+            color: black !important;
+        }
+    }
+}
