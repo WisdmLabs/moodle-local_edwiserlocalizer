@@ -17,7 +17,7 @@
 /**
  * Callback implementations for Edwiser Language Translation
  *
- * @package    local_edwiserlanguagetranslation
+ * @package    local_edwisertranslate
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -62,8 +62,9 @@ function local_edwisertranslate_render_navbar_output(): string
 
     $context = [
         'is_footer' => false,
-        'appearance' => get_config('local_edwisertranslate', 'appearance')
-
+        'appearance' => get_config('local_edwisertranslate', 'appearance'),
+        'languages' => local_edwisertranslate_get_language(),
+        'currentlang' => current_language()
     ];
 
     //js module
@@ -222,5 +223,16 @@ function local_edwisertranslate_get_language()
             'yo'    => 'Yorùbá',
             'zu'    => 'isiZulu',
         ];
-    
+
+    $language_context = [];
+    foreach ($langCodes as $code) {
+        $code = trim($code);
+
+        $language_context[] = [
+            'code' => $code,
+            'name' => $available_lang[$code],
+            'switchurl' => (new moodle_url($PAGE->url, ['lang' => $code]))->out(false)
+        ];
+    }
+    return $language_context;
 }
