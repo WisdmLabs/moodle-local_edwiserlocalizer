@@ -40,7 +40,7 @@ class hook_listener
             'is_footer' => true,
             'appearance' => get_config('local_edwisertranslate', 'appearance'),
             'languages' => local_edwisertranslate_get_language(),
-            'currentlang' => current_language()
+            'currentlang' => strtoupper(current_language())
         ];
 
         $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);

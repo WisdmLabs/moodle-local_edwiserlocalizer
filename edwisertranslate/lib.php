@@ -64,7 +64,7 @@ function local_edwisertranslate_render_navbar_output(): string
         'is_footer' => false,
         'appearance' => get_config('local_edwisertranslate', 'appearance'),
         'languages' => local_edwisertranslate_get_language(),
-        'currentlang' => current_language()
+        'currentlang' => strtoupper(current_language())
     ];
 
     //js module
