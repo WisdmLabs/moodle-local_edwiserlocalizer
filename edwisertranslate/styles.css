@@ -12,5 +12,30 @@
         a {
             color: black !important;
         }
+        #langTranslatorDropdown {
+            padding: 6px 12px !important;
+        }
+    }
+}
+#usernavigation {
+    #langTranslatorDropdown {
+        padding: 0px !important;
+    }
+}
+#local-translator-wrapper {
+    #langTranslatorDropdown {
+        font-weight: 400;
+        color: #343A40;
+        font-family: 'Inter';
+        font-size: 14px;
+        line-height: 20px;
+        border: none;
+        .icon {
+            margin-right: 4px !important;
+            height: 20px !important ;
+        }
+    }
+    .dropdown-toggle::after {
+        content: none !important;
     }
 }
