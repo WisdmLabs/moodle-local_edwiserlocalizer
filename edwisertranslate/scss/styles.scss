@@ -1,0 +1,52 @@
+#page-admin-setting-local_edwisertranslate {
+    #admin-translateto {
+        .defaultsnext {
+            display: flex !important;
+            flex-direction: column-reverse !important;
+            width: 25% !important;
+        }
+    }
+}
+#page-footer {
+    #footer-column-1 {
+        #local-translator-wrapper {
+            padding-top: 20px;
+            #langTranslatorDropdown {
+                a {
+                    color: #343A40;
+                }
+            }
+        }
+    }
+}
+
+#local-translator-wrapper {
+    #langTranslatorDropdown {
+        height: 32px;
+        padding: 6px 12px;
+        border: none;
+        background-color: #FFFFFF;
+        a {
+            border-radius: 6px;
+            font-weight: 400;
+            color: #63718C;
+            font-family: 'Inter';
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .icon {
+            margin-right: 4px;
+            height: 20px;
+        }
+    }
+    .theme-dark {
+        background-color: #222222 !important;
+        a {
+            color: #D1D1D1 !important;
+        }
+    }
+    .dropdown-toggle::after {
+        content: none !important;
+    }
+}
+
