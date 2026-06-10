@@ -72,3 +72,21 @@
         }
     }
 }
+
+
+@media (min-width: 375px) {
+    .darkoreditmode {
+        display: none;
+    }
+}
+
+@media (max-width: 376px) {
+    .darkmode-mobile-dropdown {
+        button {
+            padding: 15px 0px 0px 0px;
+        }
+    }
+    #usernavigation > div:nth-child(4) {
+        display: none !important;
+    }
+}
