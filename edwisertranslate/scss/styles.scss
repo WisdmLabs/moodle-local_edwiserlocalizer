@@ -61,3 +61,14 @@
         }
     }
 }
+
+@media (max-width: 426px) {
+    #local-translator-wrapper {
+        .selected-language {
+            display: none;
+        }
+        .icon {
+            margin: 0px !important;
+        }
+    }
+}

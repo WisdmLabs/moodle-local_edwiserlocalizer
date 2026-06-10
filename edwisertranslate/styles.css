@@ -38,3 +38,9 @@
 
 #usernavigation #local-translator-wrapper .icon {
   margin-right: 4px; }
+
+@media (max-width: 426px) {
+  #local-translator-wrapper .selected-language {
+    display: none; }
+  #local-translator-wrapper .icon {
+    margin: 0px !important; } }
