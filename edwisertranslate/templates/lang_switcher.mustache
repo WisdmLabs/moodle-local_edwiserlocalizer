@@ -51,8 +51,14 @@
 
 <div id="local-translator-wrapper" class="{{#is_footer}}dropup{{/is_footer}}{{^is_footer}}dropdown{{/is_footer}}">
     
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="langTranslatorDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{#pix}} globe, local_edwisertranslate {{/pix}} {{currentlang}}
+    <button class="btn btn-secondary dropdown-toggle {{#appearance}}theme-dark{{/appearance}}" type="button" id="langTranslatorDropdown" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{#appearance}}
+            {{#pix}} dark-globe, local_edwisertranslate {{/pix}}
+        {{/appearance}}
+        {{^appearance}}
+            {{#pix}} light-globe, local_edwisertranslate {{/pix}}
+        {{/appearance}}
+        <a class="selected-language">{{currentlang}}</a>
     </button>
     
     <div class="dropdown-menu {{#appearance}}theme-dark{{/appearance}}" aria-labelledby="langTranslatorDropdown">
