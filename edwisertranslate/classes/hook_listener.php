@@ -22,8 +22,8 @@ class hook_listener
 {
     public static function before_footer_html_generation(\core\hook\output\before_footer_html_generation $hook): void
     {
-        global $PAGE, $OUTPUT;
-
+        global $PAGE, $OUTPUT, $CFG;
+        require_once($CFG->dirroot . '/local/edwisertranslate/lib.php');
         // footer is 1
         $placement = get_config('local_edwisertranslate', 'placement');
         if ($placement != 1) {
@@ -31,7 +31,7 @@ class hook_listener
         }
 
         // check weather it should display
-        if (!local_edwisertranslate_should_display()) {
+        if (!\local_edwisertranslate_should_display()) {
             return;
         }
 
@@ -39,8 +39,9 @@ class hook_listener
         $context = [
             'is_footer' => true,
             'appearance' => get_config('local_edwisertranslate', 'appearance'),
-            'languages' => local_edwisertranslate_get_language(),
-            'currentlang' => strtoupper(current_language())
+            'languages' => \local_edwisertranslate_get_language(),
+            'currentlang' => strtoupper(current_language()),
+            'theme_name' => $PAGE->theme->name
         ];
 
         $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);
