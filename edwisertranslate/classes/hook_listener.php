@@ -44,7 +44,7 @@ class hook_listener
             'theme_name' => $PAGE->theme->name
         ];
 
-        $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);
+        $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$context]);
 
         $html = $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
         $hook->add_html($html);
