@@ -64,11 +64,13 @@ function local_edwisertranslate_render_navbar_output(): string
         'is_footer' => false,
         'appearance' => get_config('local_edwisertranslate', 'appearance'),
         'languages' => local_edwisertranslate_get_language(),
-        'currentlang' => strtoupper(current_language())
+        'currentlang' => strtoupper(current_language()),
+        'theme_name' => $PAGE->theme->name
+
     ];
 
     //js module
-    $PAGE->requires->js_call_amd('local_edwisertranslate/navbar', 'init', [$context]);
+    $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$context]);
 
     // output to mustache file
     return $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
