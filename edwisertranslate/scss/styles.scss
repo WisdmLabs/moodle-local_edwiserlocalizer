@@ -90,3 +90,21 @@
         display: none !important;
     }
 }
+
+body:not(.edw-translate) {
+    #local-translator-wrapper {
+        #langTranslatorDropdown {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            .icon {
+                margin-right: 0px !important;
+            }
+            .selected-language {
+                color: #343A40 !important;
+                font-size: 12px !important;
+                font-family: unset !important;
+            }
+        }
+    }
+}

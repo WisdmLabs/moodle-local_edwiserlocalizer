@@ -54,3 +54,14 @@
     padding: 15px 0px 0px 0px; }
   #usernavigation > div:nth-child(4) {
     display: none !important; } }
+
+body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
+  display: flex;
+  align-items: center;
+  gap: 2px; }
+  body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown .icon {
+    margin-right: 0px !important; }
+  body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown .selected-language {
+    color: #343A40 !important;
+    font-size: 12px !important;
+    font-family: unset !important; }
