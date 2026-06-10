@@ -28,7 +28,7 @@ function local_edwisertranslate_should_display(): bool
     global $PAGE;
     // plugin is on/off
     $isenabled = get_config('local_edwisertranslate', 'enable');
-    if ($isenabled == 0) {
+    if (!$isenabled) {
         return false;
     }
 
