@@ -65,3 +65,6 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
     color: #343A40 !important;
     font-size: 12px !important;
     font-family: unset !important; }
+
+body:not(.edw-translate) #usernavigation #local-translator-wrapper {
+  padding-top: 15px; }
