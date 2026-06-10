@@ -31,3 +31,10 @@
 
 #local-translator-wrapper .dropdown-toggle::after {
   content: none !important; }
+
+#usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+#usernavigation #local-translator-wrapper .icon {
+  margin-right: 4px; }

@@ -50,3 +50,14 @@
     }
 }
 
+#usernavigation {
+    #local-translator-wrapper {
+        #langTranslatorDropdown:not(.theme-dark) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .icon {
+            margin-right: 4px;
+        }
+    }
+}
