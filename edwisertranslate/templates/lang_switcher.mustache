@@ -17,9 +17,9 @@
 {{!
     @template local_edwisertranslate/ templates/lang_switcher.mustache
 
-    This template renders a language translator dropdown or dropup menu. 
-    It includes a language toggle button, a list of available languages, 
-    and placeholder containers for Google Translate and a loading spinner.
+    This template renders a language translator dropdown or dropup menu.
+    It includes a language toggle button, a list of available languages,
+    and a placeholder container for Google Translate.
 
     Example context (json):
     {
@@ -49,8 +49,8 @@
     }
 }}
 
-<div id="local-translator-wrapper" class="{{#is_footer}}dropup{{/is_footer}}{{^is_footer}}dropdown{{/is_footer}}">
-    
+<div id="local-translator-wrapper" class="{{#is_footer}}dropup{{/is_footer}}{{^is_footer}}dropdown{{/is_footer}}" translate="no">
+
     <button class="btn btn-secondary dropdown-toggle {{#appearance}}theme-dark{{/appearance}}" type="button" id="langTranslatorDropdown" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{#appearance}}
             {{#pix}} dark-globe, local_edwisertranslate {{/pix}}
@@ -58,20 +58,17 @@
         {{^appearance}}
             {{#pix}} light-globe, local_edwisertranslate {{/pix}}
         {{/appearance}}
-        <a class="selected-language">{{currentlang}}</a>
+        <span class="selected-language">{{currentlang}}</span>
     </button>
-    
+
     <div class="dropdown-menu {{#appearance}}theme-dark{{/appearance}}" aria-labelledby="langTranslatorDropdown">
         {{#languages}}
-            <a class="dropdown-item lang-switch-link {{#isactive}}active{{/isactive}}" href="{{switchurl}}" data-lang-code="{{code}}">
+            <a class="dropdown-item lang-switch-link {{#isactive}}active{{/isactive}}" href="{{switchurl}}" data-lang-code="{{code}}" data-gtlang="{{gtcode}}" data-langname="{{name}}">
                 {{name}}
             </a>
         {{/languages}}
     </div>
 
     <div id="google_translate_element2" style="display:none;"></div>
-    
-    <div class="translate-spinner" style="display:none;">
-        <i class="fa fa-spinner fa-spin"></i> Translating...
-    </div>
+
 </div>
