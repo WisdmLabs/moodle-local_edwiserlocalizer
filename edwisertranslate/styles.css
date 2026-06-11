@@ -68,3 +68,29 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
+
+.goog-te-banner-frame {
+  display: none !important; }
+
+#goog-gt-tt {
+  display: none !important; }
+
+.goog-te-balloon-frame {
+  display: none !important; }
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important; }
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important; }
+
+.goog-te-combo {
+  display: none !important; }
+
+.skiptranslate {
+  display: none !important; }
+
+body {
+  top: 0 !important; }
