@@ -80,8 +80,11 @@ function local_edwisertranslate_render_navbar_output(): string
     $contextJS = [
         'is_footer' => false,
         'appearance' => get_config('local_edwisertranslate', 'appearance'),
-        'theme_name' => $PAGE->theme->name
-
+        'theme_name' => $PAGE->theme->name,
+        'str_light' => get_string('light', 'local_edwisertranslate'),
+        'str_dark'  => get_string('dark', 'local_edwisertranslate'),
+        'str_on'    => get_string('on', 'local_edwisertranslate'),
+        'str_off'   => get_string('off', 'local_edwisertranslate')
     ];
 
     $currentlang = current_language();

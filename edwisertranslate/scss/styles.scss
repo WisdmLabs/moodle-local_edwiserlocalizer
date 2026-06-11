@@ -66,6 +66,15 @@
             margin-right: 4px;
         }
     }
+    .darkmode-mobile-dropdown {
+        .dm-mobile-text,
+        .em-mobile-text {
+            font-family: 'Inter';
+            color: #4C5A73;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+    }
 }
 
 @media (max-width: 426px) {

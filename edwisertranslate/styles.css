@@ -44,6 +44,13 @@
 #usernavigation #local-translator-wrapper .icon {
   margin-right: 4px; }
 
+#usernavigation .darkmode-mobile-dropdown .dm-mobile-text,
+#usernavigation .darkmode-mobile-dropdown .em-mobile-text {
+  font-family: 'Inter';
+  color: #4C5A73;
+  font-size: 14px !important;
+  font-weight: 400 !important; }
+
 @media (max-width: 426px) {
   #local-translator-wrapper .selected-language {
     display: none; }
