@@ -93,6 +93,147 @@ define(['jquery'], function ($) {
 
             updateDarkmodeMenu();
             $(window).on('resize', updateDarkmodeMenu);
+
+            // ============================================
+            // GOOGLE TRANSLATE INTEGRATION
+            // ============================================
+
+            var pageLanguage = config.currentlang_gtcode || 'en';
+
+            var SELECTORS = {
+                CURRENT: '.selected-language',
+                LANG_ITEM: '.lang-switch-link'
+            };
+
+            /**
+             * Load Google Translate Element script and initialize hidden translator.
+             */
+            function loadGoogleTranslate() {
+                window.googleTranslateElementInit2 = function() {
+                    new window.google.translate.TranslateElement({
+                        pageLanguage: pageLanguage,
+                        autoDisplay: false
+                    }, 'google_translate_element2');
+                };
+
+                var script = document.createElement('script');
+                script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2';
+                script.async = true;
+                document.head.appendChild(script);
+            }
+
+            /**
+             * Trigger Google Translate to switch to a target language.
+             * Sets the googtrans cookie and reloads the page so Google
+             * Translate activates on the next load.
+             *
+             * @param {string} langPair e.g. "en|fr"
+             */
+            function doTranslate(langPair) {
+                if (langPair === '') {
+                    return;
+                }
+                var parts = langPair.split('|');
+                var sourceLang = parts[0];
+                var targetLang = parts[1];
+
+                if (sourceLang === targetLang) {
+                    clearGoogTransCookie();
+                } else {
+                    setGoogTransCookie('/' + sourceLang + '/' + targetLang);
+                }
+                window.location.reload();
+            }
+
+            /**
+             * Set the googtrans cookie to activate Google Translate.
+             *
+             * @param {string} value e.g. "/en/fr"
+             */
+            function setGoogTransCookie(value) {
+                document.cookie = 'googtrans=' + value + ';path=/';
+                document.cookie = 'googtrans=' + value + ';path=/;domain=' + window.location.hostname;
+            }
+
+            /**
+             * Clear the googtrans cookie to restore original language.
+             */
+            function clearGoogTransCookie() {
+                document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+                document.cookie = 'googtrans=;path=/;domain=' + window.location.hostname +
+                    ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            }
+
+            /**
+             * Get current target language from the googtrans cookie.
+             *
+             * @returns {string|null} Target language code or null.
+             */
+            function getCurrentGoogTransLang() {
+                var match = document.cookie.match(/googtrans=\/[^/]+\/([^;]+)/);
+                return match ? match[1] : null;
+            }
+
+            /**
+             * Hide Google Translate top banner and injected UI elements.
+             */
+            function hideGoogleBranding() {
+                var css = document.createElement('style');
+                css.textContent = [
+                    '.goog-te-banner-frame { display: none !important; }',
+                    '#goog-gt-tt { display: none !important; }',
+                    '.goog-te-balloon-frame { display: none !important; }',
+                    '.goog-tooltip { display: none !important; }',
+                    '.goog-tooltip:hover { display: none !important; }',
+                    '.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }',
+                    '#google_translate_element2 { display: none !important; }',
+                    '.goog-te-combo { display: none !important; }',
+                    'body { top: 0 !important; }',
+                    '.skiptranslate { display: none !important; }'
+                ].join('\n');
+                document.head.appendChild(css);
+            }
+
+            /**
+             * Update the dropdown label and active state for the selected language.
+             *
+             * @param {string} langCode Moodle language code.
+             */
+            function updateCurrentLabel(langCode) {
+                $(SELECTORS.CURRENT).text(langCode.toUpperCase());
+                $(SELECTORS.LANG_ITEM).removeClass('active');
+                $(SELECTORS.LANG_ITEM + "[data-lang-code='" + langCode + "']").addClass('active');
+            }
+
+            /**
+             * Initialize Google Translate integration.
+             * Loads the hidden translator, wires click handlers,
+             * and restores any previously selected language.
+             */
+            function initGoogleTranslate() {
+                hideGoogleBranding();
+                loadGoogleTranslate();
+
+                $(document).on('click', SELECTORS.LANG_ITEM, function(e) {
+                    e.preventDefault();
+                    var $item = $(this);
+                    var langCode = $item.data('lang-code');
+                    var gtLang = $item.data('gtlang');
+
+                    updateCurrentLabel(langCode);
+                    doTranslate(pageLanguage + '|' + gtLang);
+                });
+
+                var currentGtLang = getCurrentGoogTransLang();
+                if (currentGtLang && currentGtLang !== pageLanguage) {
+                    var $activeLang = $(SELECTORS.LANG_ITEM + "[data-gtlang='" + currentGtLang + "']");
+                    if ($activeLang.length) {
+                        updateCurrentLabel($activeLang.data('lang-code'));
+                    }
+                }
+            }
+
+            initGoogleTranslate();
         }
     };
 });
