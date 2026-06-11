@@ -45,6 +45,24 @@ function local_edwisertranslate_should_display(): bool
     return false;
 }
 
+/**
+ * Map a Moodle language code to its Google Translate language code.
+ *
+ * @param string $moodlecode Moodle language code (e.g. 'zh_cn').
+ * @return string Google Translate language code (e.g. 'zh-CN').
+ */
+function local_edwisertranslate_get_gtcode(string $moodlecode): string
+{
+    $map = [
+        'zh_cn' => 'zh-CN',
+        'zh_tw' => 'zh-TW',
+        'pt_br' => 'pt-BR',
+        'pt_pt' => 'pt-PT',
+        'he'    => 'iw',
+    ];
+    return $map[$moodlecode] ?? $moodlecode;
+}
+
 //navbar
 function local_edwisertranslate_render_navbar_output(): string
 {
@@ -60,11 +78,13 @@ function local_edwisertranslate_render_navbar_output(): string
         return '';
     }
 
+    $currentlang = current_language();
     $context = [
         'is_footer' => false,
         'appearance' => get_config('local_edwisertranslate', 'appearance'),
         'languages' => local_edwisertranslate_get_language(),
-        'currentlang' => strtoupper(current_language()),
+        'currentlang' => strtoupper($currentlang),
+        'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
         'theme_name' => $PAGE->theme->name
 
     ];
@@ -205,12 +225,15 @@ function local_edwisertranslate_get_language(): array
         ];
 
     $language_context = [];
+    $currentlang = current_language();
     foreach ($langCodes as $code) {
         $code = trim($code);
 
         $language_context[] = [
             'code' => $code,
             'name' => $available_lang[$code],
+            'gtcode' => local_edwisertranslate_get_gtcode($code),
+            'isactive' => ($code === $currentlang),
             'switchurl' => (new moodle_url($PAGE->url, ['lang' => $code]))->out(false)
         ];
     }

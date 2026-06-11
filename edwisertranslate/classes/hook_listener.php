@@ -35,7 +35,7 @@ class hook_listener
             return;
         }
 
-        // Prepare context 
+        // Prepare context
         $currentlang = current_language();
         $context = [
             'is_footer' => true,
