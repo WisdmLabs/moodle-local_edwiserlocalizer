@@ -44,3 +44,5 @@ $string['appearance'] = 'Appearance';
 $string['appearance_desc'] = 'Choose the appearance of the language switcher to match your site.';
 $string['light'] = 'Light';
 $string['dark'] = 'Dark';
+$string['on'] = 'On';
+$string['off'] = 'Off';
