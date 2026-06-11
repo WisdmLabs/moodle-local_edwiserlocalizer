@@ -34,6 +34,13 @@ class hook_listener
         if (!\local_edwisertranslate_should_display()) {
             return;
         }
+        //context for JS
+        $contextJS = [
+            'is_footer' => true,
+            'appearance' => get_config('local_edwisertranslate', 'appearance'),
+            'theme_name' => $PAGE->theme->name
+
+        ];
 
         // Prepare context
         $currentlang = current_language();
@@ -42,11 +49,10 @@ class hook_listener
             'appearance' => get_config('local_edwisertranslate', 'appearance'),
             'languages' => \local_edwisertranslate_get_language(),
             'currentlang' => strtoupper($currentlang),
-            'currentlang_gtcode' => \local_edwisertranslate_get_gtcode($currentlang),
-            'theme_name' => $PAGE->theme->name
+            'currentlang_gtcode' => \local_edwisertranslate_get_gtcode($currentlang)
         ];
 
-        $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$context]);
+        $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$contextJS]);
 
         $html = $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
         $hook->add_html($html);

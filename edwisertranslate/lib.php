@@ -77,6 +77,12 @@ function local_edwisertranslate_render_navbar_output(): string
     if (!local_edwisertranslate_should_display()) {
         return '';
     }
+    $contextJS = [
+        'is_footer' => false,
+        'appearance' => get_config('local_edwisertranslate', 'appearance'),
+        'theme_name' => $PAGE->theme->name
+
+    ];
 
     $currentlang = current_language();
     $context = [
@@ -84,13 +90,11 @@ function local_edwisertranslate_render_navbar_output(): string
         'appearance' => get_config('local_edwisertranslate', 'appearance'),
         'languages' => local_edwisertranslate_get_language(),
         'currentlang' => strtoupper($currentlang),
-        'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
-        'theme_name' => $PAGE->theme->name
-
+        'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang)
     ];
 
     //js module
-    $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$context]);
+    $PAGE->requires->js_call_amd('local_edwisertranslate/edwTranslate', 'init', [$contextJS]);
 
     // output to mustache file
     return $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
