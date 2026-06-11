@@ -12,7 +12,10 @@
         #local-translator-wrapper {
             padding-top: 20px;
             #langTranslatorDropdown {
-                a {
+                .icon {
+                    filter: brightness(0.1);
+                }
+                span {
                     color: #343A40;
                 }
             }
@@ -26,7 +29,7 @@
         padding: 6px 12px;
         border: none;
         background-color: #FFFFFF;
-        a {
+        span {
             border-radius: 6px;
             font-weight: 400;
             color: #63718C;
@@ -41,7 +44,7 @@
     }
     .theme-dark {
         background-color: #222222 !important;
-        a {
+        span {
             color: #D1D1D1 !important;
         }
     }

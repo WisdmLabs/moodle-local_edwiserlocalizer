@@ -5,15 +5,20 @@
 
 #page-footer #footer-column-1 #local-translator-wrapper {
   padding-top: 20px; }
-  #page-footer #footer-column-1 #local-translator-wrapper #langTranslatorDropdown a {
+  #page-footer #footer-column-1 #local-translator-wrapper #langTranslatorDropdown .icon {
+    filter: brightness(0.1); }
+  #page-footer #footer-column-1 #local-translator-wrapper #langTranslatorDropdown span {
     color: #343A40; }
+
+#local-translator-wrapper .dropdown-menu {
+  min-width: 81px; }
 
 #local-translator-wrapper #langTranslatorDropdown {
   height: 32px;
   padding: 6px 12px;
   border: none;
   background-color: #FFFFFF; }
-  #local-translator-wrapper #langTranslatorDropdown a {
+  #local-translator-wrapper #langTranslatorDropdown span {
     border-radius: 6px;
     font-weight: 400;
     color: #63718C;
@@ -26,7 +31,7 @@
 
 #local-translator-wrapper .theme-dark {
   background-color: #222222 !important; }
-  #local-translator-wrapper .theme-dark a {
+  #local-translator-wrapper .theme-dark span {
     color: #D1D1D1 !important; }
 
 #local-translator-wrapper .dropdown-toggle::after {
@@ -51,9 +56,16 @@
 
 @media (max-width: 376px) {
   .darkmode-mobile-dropdown button {
-    padding: 15px 0px 0px 0px; }
-  #usernavigation > div:nth-child(4) {
-    display: none !important; } }
+    margin-top: 15px;
+    padding: 0px; }
+  #usernavigation #darkmode-mobile-menu {
+    min-width: 94px;
+    margin-top: 32.5px;
+    border: none !important; }
+    #usernavigation #darkmode-mobile-menu .nav-darkmode {
+      padding: 12px 14px; }
+    #usernavigation #darkmode-mobile-menu form {
+      padding: 12px 14px; } }
 
 body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
   display: flex;
@@ -68,6 +80,13 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
+
+body:not(.edw-translate) #page-footer #local-translator-wrapper {
+  padding-bottom: 26.97px; }
+
+body:not(.edw-translate) #page-footer #langTranslatorDropdown {
+  border: 1px solid;
+  border-radius: 6px; }
 
 .goog-te-banner-frame {
   display: none !important; }
