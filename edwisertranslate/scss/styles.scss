@@ -24,6 +24,9 @@
 }
 
 #local-translator-wrapper {
+    .dropdown-menu {
+        min-width: 81px;
+    }
     #langTranslatorDropdown {
         height: 32px;
         padding: 6px 12px;
@@ -86,11 +89,22 @@
 @media (max-width: 376px) {
     .darkmode-mobile-dropdown {
         button {
-            padding: 15px 0px 0px 0px;
+            margin-top: 15px;
+            padding: 0px;
         }
     }
-    #usernavigation > div:nth-child(4) {
-        display: none !important;
+    #usernavigation {
+        #darkmode-mobile-menu {
+            min-width: 94px;
+            margin-top: 32.5px;
+            border: none !important;
+            .nav-darkmode {
+                padding: 12px 14px;
+            }
+            form {
+                padding: 12px 14px;
+            }
+        }
     }
 }
 
@@ -113,6 +127,15 @@ body:not(.edw-translate) {
     #usernavigation {
         #local-translator-wrapper {
             padding-top: 15px;
+        }
+    }
+    #page-footer {
+        #local-translator-wrapper {
+            padding-bottom: 26.97px;
+        }
+        #langTranslatorDropdown {
+            border: 1px solid;
+            border-radius: 6px;
         }
     }
 }
