@@ -84,11 +84,11 @@ define(['jquery'], function ($) {
                     return;
                 }
 
-                const $thirdDiv = $('#usernavigation > div:nth-child(3)');
+                const $preset = $('#usernavigation .preset-nav-group').last();
                 if ($(window).width() <= 375) {
-                    $thirdDiv.addClass('d-none');
+                    $preset.addClass('d-none');
                 } else {
-                    $thirdDiv.removeClass('d-none');
+                    $preset.removeClass('d-none');
                 }
 
                 // MOBILE VIEW
