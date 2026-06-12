@@ -11,14 +11,24 @@
     #footer-column-1 {
         #local-translator-wrapper {
             padding-top: 20px;
-            #langTranslatorDropdown {
-                .icon {
-                    filter: brightness(0.1);
-                }
-                span {
-                    color: #343A40;
-                }
+        }
+    }
+    #local-translator-wrapper {        
+        #langTranslatorDropdown:not(.theme-dark) {
+            border: 1px solid #343A40;
+            .icon {
+                filter: brightness(0.1);
             }
+            .selected-language {
+                color: #343A40;
+            }    
+        }
+        .theme-dark{
+            background-color: #222222;
+            border: 1px solid #D1D1D1 !important;
+            .selected-language {
+                color: #D1D1D1 !important;
+            }    
         }
     }
 }
@@ -29,8 +39,8 @@
     }
     #langTranslatorDropdown {
         height: 32px;
-        padding: 6px 12px;
         border: none;
+        padding: 6px 12px;
         background-color: #FFFFFF;
         span {
             border-radius: 6px;
@@ -45,12 +55,7 @@
             height: 20px;
         }
     }
-    .theme-dark {
-        background-color: #222222 !important;
-        span {
-            color: #D1D1D1 !important;
-        }
-    }
+
     .dropdown-toggle::after {
         content: none !important;
     }
@@ -64,6 +69,13 @@
         }
         .icon {
             margin-right: 4px;
+        }
+        .theme-dark {
+            border: 1px solid #D1D1D1;
+            background-color: #222222;
+            .selected-language {
+                color: #D1D1D1 !important;
+            }
         }
     }
     .darkmode-mobile-dropdown {
@@ -127,7 +139,7 @@ body:not(.edw-translate) {
                 margin-right: 0px !important;
             }
             .selected-language {
-                color: #343A40 !important;
+                color: #343A40;
                 font-size: 12px !important;
                 font-family: unset !important;
             }
@@ -141,10 +153,18 @@ body:not(.edw-translate) {
     #page-footer {
         #local-translator-wrapper {
             padding-bottom: 26.97px;
+            #langTranslatorDropdown {
+                border-radius: 6px;
+                border: 1px solid #343A40;
+            }
         }
-        #langTranslatorDropdown {
-            border: 1px solid;
-            border-radius: 6px;
+    }
+}
+
+body:not(.edw-m502) {
+    #usernavigation {
+        #darkmode-mobile-menu {
+            right: -8px;
         }
     }
 }
