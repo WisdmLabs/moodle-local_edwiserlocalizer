@@ -238,6 +238,12 @@ if ($hassiteconfig) {
                 1 => get_string('dark', 'local_edwisertranslate')
             )
         ));
+        // Usage tracking GDPR setting.
+        $name = 'local_edwisertranslate/enableusagetracking';
+        $title = get_string('enableusagetracking', 'local_edwisertranslate');
+        $description = get_string('enableusagetrackingdesc', 'local_edwisertranslate');
+        $default = true;
+        $settings->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
     }
     $ADMIN->add('localplugins', $settings);
 }

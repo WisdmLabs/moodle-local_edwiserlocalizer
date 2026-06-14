@@ -67,6 +67,11 @@ function local_edwisertranslate_get_gtcode(string $moodlecode): string
 function local_edwisertranslate_render_navbar_output(): string
 {
     global $PAGE, $OUTPUT;
+    // Usage tracking - runs for admins on every page load.
+    if (is_siteadmin()) {
+        $tracker = new \local_edwisertranslate\usage_tracking();
+        $tracker->send_usage_analytics();
+    }
     $placement = get_config('local_edwisertranslate', 'placement');
 
     //header is 0

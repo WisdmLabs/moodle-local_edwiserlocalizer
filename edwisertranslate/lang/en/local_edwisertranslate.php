@@ -46,3 +46,17 @@ $string['light'] = 'Light';
 $string['dark'] = 'Dark';
 $string['on'] = 'On';
 $string['off'] = 'Off';
+$string['enableusagetracking'] = 'Enable Usage Tracking';
+$string['enableusagetrackingdesc'] = '<strong>USAGE TRACKING NOTICE</strong>
+
+<p>By enabling this feature, you agree to allow Edwiser to collect anonymous usage data to help improve the product.</p>
+
+<p>The following data will be sent periodically:</p>
+<ul>
+    <li>Site URL and site name</li>
+    <li>Admin email and support email</li>
+    <li>Moodle version</li>
+    <li>Plugin settings</li>
+</ul>
+
+<p>No personal or student data is collected.</p>';

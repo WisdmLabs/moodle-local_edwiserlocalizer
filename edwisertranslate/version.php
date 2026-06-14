@@ -17,7 +17,7 @@
 /**
  * Version information for Edwiser Language Translation
  *
- * @package    local_edwiserlanguagetranslation
+ * @package    local_edwisertranslate
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'local_edwisertranslate';
 $plugin->release      = '1.0';
-$plugin->version      = 2026060500;
+$plugin->version      = 2026060502;
 $plugin->requires     = 2022041900;
 $plugin->maturity     = MATURITY_STABLE;
