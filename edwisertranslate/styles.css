@@ -41,6 +41,10 @@
 #local-translator-wrapper .dropdown-toggle::after {
   content: none !important; }
 
+#local-translator-wrapper .dropdown-menu.show {
+  max-height: 380px;
+  overflow-y: auto; }
+
 #usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
   padding-left: 0px;
   padding-right: 0px; }
