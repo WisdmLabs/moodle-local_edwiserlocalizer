@@ -85,14 +85,14 @@ define(['jquery'], function ($) {
                 }
 
                 const $preset = $('#usernavigation .preset-nav-group').last();
-                if ($(window).width() <= 375) {
+                if ($(window).width() <= 426) {
                     $preset.addClass('d-none');
                 } else {
                     $preset.removeClass('d-none');
                 }
 
                 // MOBILE VIEW
-                if ($(window).width() <= 375) {
+                if ($(window).width() <= 426) {
                     $dropdown.removeClass('d-none');
 
                     // Dark mode add text
