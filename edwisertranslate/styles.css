@@ -44,6 +44,10 @@
 #local-translator-wrapper .dropdown-menu.show {
   max-height: 380px;
   overflow-y: auto; }
+  #local-translator-wrapper .dropdown-menu.show a {
+    color: #4C5A73 !important;
+    font-weight: 400;
+    font-family: 'Inter'; }
 
 #usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
   padding-left: 0px;
