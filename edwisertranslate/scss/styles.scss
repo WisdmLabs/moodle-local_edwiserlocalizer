@@ -3,7 +3,6 @@
         .defaultsnext {
             display: flex !important;
             flex-direction: column-reverse !important;
-            width: 25% !important;
         }
     }
 }
@@ -113,6 +112,21 @@
 @media (min-width: 426px) {
     .darkoreditmode {
         display: none;
+    }
+}
+
+@media (min-width: 319px) {
+    .darkoreditmode {
+        display: none;
+    }
+    #page-admin-setting-local_edwisertranslate {
+        #admin-translateto {
+            .defaultsnext {
+                .form-autocomplete-input {
+                    width: 200px !important;
+                }
+            }
+        }
     }
 }
 

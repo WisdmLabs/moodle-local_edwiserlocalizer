@@ -1,7 +1,6 @@
 #page-admin-setting-local_edwisertranslate #admin-translateto .defaultsnext {
   display: flex !important;
-  flex-direction: column-reverse !important;
-  width: 25% !important; }
+  flex-direction: column-reverse !important; }
 
 #page-footer #footer-column-1 #local-translator-wrapper {
   padding-top: 20px; }
@@ -78,6 +77,12 @@
 @media (min-width: 426px) {
   .darkoreditmode {
     display: none; } }
+
+@media (min-width: 319px) {
+  .darkoreditmode {
+    display: none; }
+  #page-admin-setting-local_edwisertranslate #admin-translateto .defaultsnext .form-autocomplete-input {
+    width: 200px !important; } }
 
 @media (max-width: 426px) {
   .darkmode-mobile-dropdown button {
