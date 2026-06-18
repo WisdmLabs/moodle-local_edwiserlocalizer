@@ -68,12 +68,6 @@
   font-size: 14px !important;
   font-weight: 400 !important; }
 
-@media (max-width: 426px) {
-  #local-translator-wrapper .selected-language {
-    display: none; }
-  #local-translator-wrapper .icon {
-    margin: 0px !important; } }
-
 @media (min-width: 426px) {
   .darkoreditmode {
     display: none; } }
@@ -95,7 +89,14 @@
     #usernavigation #darkmode-mobile-menu .nav-darkmode {
       padding: 12px 14px; }
     #usernavigation #darkmode-mobile-menu form {
-      padding: 12px 14px; } }
+      padding: 12px 14px; }
+  #usernavigation #langTranslatorDropdown {
+    padding-left: 6px;
+    padding-right: 6px; }
+  #local-translator-wrapper .selected-language {
+    display: none; }
+  #local-translator-wrapper .icon {
+    margin: 0px !important; } }
 
 body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
   display: flex;
