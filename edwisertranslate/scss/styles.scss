@@ -185,6 +185,13 @@ body:not(.edw-translate) {
             }
         }
     }
+    @media (max-width: 426px) {
+        #page-footer {
+            #local-translator-wrapper {
+                padding-left: 12px;
+            }
+        }
+    }
 }
 
 body:not(.edw-m502) {

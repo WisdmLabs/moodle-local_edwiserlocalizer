@@ -120,6 +120,10 @@ body:not(.edw-translate) #page-footer #local-translator-wrapper {
     border-radius: 6px;
     border: 1px solid #343A40; }
 
+@media (max-width: 426px) {
+  body:not(.edw-translate) #page-footer #local-translator-wrapper {
+    padding-left: 12px; } }
+
 body:not(.edw-m502) #usernavigation #darkmode-mobile-menu {
   right: -8px; }
 
