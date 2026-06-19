@@ -26,6 +26,10 @@
 function local_edwisertranslate_should_display(): bool
 {
     global $PAGE;
+    // it stops the page from populating the button on customizer.php page
+    if ($PAGE->url && strpos($PAGE->url->out(false), 'theme/remui/customizer.php') !== false) {
+        return false;
+    }
     // plugin is on/off
     $isenabled = get_config('local_edwisertranslate', 'enable');
     if (!$isenabled) {
