@@ -80,6 +80,12 @@
   #page-admin-setting-local_edwisertranslate #admin-translateto .defaultsnext .form-autocomplete-input {
     width: fit-content !important; } }
 
+#page-admin-setting-local_edwisertranslate #admin-translateto .defaultsnext .form-autocomplete-selection {
+  margin-bottom: 0px !important; }
+
+#page-admin-setting-local_edwisertranslate #admin-translateto br {
+  display: none; }
+
 @media (max-width: 426px) {
   .darkmode-mobile-dropdown button {
     margin-top: 15px;

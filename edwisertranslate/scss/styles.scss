@@ -121,6 +121,18 @@
         }
     }
 }
+#page-admin-setting-local_edwisertranslate {
+    #admin-translateto {
+        .defaultsnext {
+            .form-autocomplete-selection {
+                margin-bottom: 0px !important;
+            }
+        }
+        br {
+            display: none;
+        }
+    }
+}
 
 @media (max-width: 426px) {
     .darkmode-mobile-dropdown {
