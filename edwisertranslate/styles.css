@@ -89,6 +89,9 @@
 #page-admin-setting-local_edwisertranslate #admin-translateto br {
   display: none; }
 
+#page-admin-setting-local_edwisertranslate #id_s_local_edwisertranslate_appearance {
+  line-height: 1.5; }
+
 @media (max-width: 426px) {
   .darkmode-mobile-dropdown button {
     margin-top: 15px;
