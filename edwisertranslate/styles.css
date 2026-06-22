@@ -17,7 +17,8 @@
     border: 1px solid #D1D1D1 !important; }
     #page-footer #local-translator-wrapper .theme-dark .selected-language {
       color: #D1D1D1 !important; }
-  #page-footer .asw-menu-header .asw-menu-title font {
+  #page-footer .asw-menu .asw-menu-header font,
+  #page-footer .asw-menu .feedback-heading font {
     color: #FFFFFF !important; }
 
 #local-translator-wrapper {
