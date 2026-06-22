@@ -135,6 +135,12 @@ body:not(.edw-translate) #page-footer #local-translator-wrapper {
 body:not(.edw-m502) #usernavigation #darkmode-mobile-menu {
   right: -8px; }
 
+body.pagelayout-login #page-footer #local-translator-wrapper {
+  position: fixed;
+  padding: 0px;
+  bottom: 20px;
+  left: 20px; }
+
 .goog-te-banner-frame {
   display: none !important; }
 
