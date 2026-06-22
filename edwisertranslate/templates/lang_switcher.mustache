@@ -72,3 +72,9 @@
     <div id="google_translate_element2" style="display:none;"></div>
 
 </div>
+
+{{#js}}
+require(['local_edwisertranslate/edwTranslate'], function(Translator) {
+    Translator.init({{{jsconfig}}});
+});
+{{/js}}
