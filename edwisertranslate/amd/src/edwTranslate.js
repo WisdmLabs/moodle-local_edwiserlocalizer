@@ -28,14 +28,26 @@ define(['jquery'], function ($) {
 
             if (config.is_footer) {
                 $wrapper.addClass('dropup').removeClass('dropdown');
-                if (config.theme_name !== "remui") {
-                    var $notRemuiFooter = $('#page-footer');
-                    $wrapper.prependTo($notRemuiFooter);
-                }
-                else {
-                    var $footer = $('#page-footer, #footer-column-1').last();
-                    if ($footer.length) {
-                        $footer.append($wrapper);
+                const footerConfig = [
+                    { selector: '#page-footer #footer-column-1', action: 'append' },
+                    { selector: '#page-footer .footer-container', action: 'prepend' },
+                    { selector: '#page-footer', action: 'prepend' }
+                ];
+
+                for (const footer of footerConfig) {
+                    const $target = $(footer.selector);
+
+                    if ($target.length > 0) {
+
+                        // Dynamically append or prepend based on the config
+                        if (footer.action === 'append') {
+                            $target.last().append($wrapper);
+                        } else {
+                            $wrapper.prependTo($target);
+                        }
+
+                        // Stop the loop when we find a match
+                        break;
                     }
                 }
             }

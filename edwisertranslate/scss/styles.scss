@@ -41,6 +41,7 @@
 }
 
 #local-translator-wrapper {
+    max-width: 66px;
     .dropdown-menu {
         min-width: 81px;
     }
@@ -59,7 +60,8 @@
         }
         .icon {
             margin-right: 4px;
-            height: 20px;
+            height: 18px;
+            width: 18px !important;
         }
     }
 

@@ -20,37 +20,37 @@
   #page-footer .asw-menu-header .asw-menu-title font {
     color: #FFFFFF !important; }
 
-#local-translator-wrapper .dropdown-menu {
-  min-width: 81px; }
-
-#local-translator-wrapper #langTranslatorDropdown {
-  height: 32px;
-  border: none;
-  padding: 6px 12px;
-  background-color: #FFFFFF; }
-  #local-translator-wrapper #langTranslatorDropdown span {
-    border-radius: 6px;
-    font-weight: 400;
-    color: #63718C;
-    font-family: 'Inter';
-    font-size: 14px;
-    line-height: 20px; }
-  #local-translator-wrapper #langTranslatorDropdown .icon {
-    margin-right: 4px;
-    height: 20px; }
-
-#local-translator-wrapper .dropdown-toggle::after {
-  content: none !important; }
-
-#local-translator-wrapper .dropdown-menu.show {
-  max-height: 380px;
-  overflow-y: auto; }
-  #local-translator-wrapper .dropdown-menu.show a {
-    color: #4C5A73 !important;
-    font-weight: 400;
-    font-family: 'Inter'; }
-    #local-translator-wrapper .dropdown-menu.show a:hover {
-      color: #4C5A73 !important; }
+#local-translator-wrapper {
+  max-width: 66px; }
+  #local-translator-wrapper .dropdown-menu {
+    min-width: 81px; }
+  #local-translator-wrapper #langTranslatorDropdown {
+    height: 32px;
+    border: none;
+    padding: 6px 12px;
+    background-color: #FFFFFF; }
+    #local-translator-wrapper #langTranslatorDropdown span {
+      border-radius: 6px;
+      font-weight: 400;
+      color: #63718C;
+      font-family: 'Inter';
+      font-size: 14px;
+      line-height: 20px; }
+    #local-translator-wrapper #langTranslatorDropdown .icon {
+      margin-right: 4px;
+      height: 18px;
+      width: 18px !important; }
+  #local-translator-wrapper .dropdown-toggle::after {
+    content: none !important; }
+  #local-translator-wrapper .dropdown-menu.show {
+    max-height: 380px;
+    overflow-y: auto; }
+    #local-translator-wrapper .dropdown-menu.show a {
+      color: #4C5A73 !important;
+      font-weight: 400;
+      font-family: 'Inter'; }
+      #local-translator-wrapper .dropdown-menu.show a:hover {
+        color: #4C5A73 !important; }
 
 #usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
   padding-left: 0px;
