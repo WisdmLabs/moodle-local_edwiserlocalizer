@@ -3,7 +3,7 @@
   flex-direction: column-reverse !important; }
 
 #page-footer {
-  z-index: 1020; }
+  z-index: 1016; }
   #page-footer #footer-column-1 #local-translator-wrapper {
     padding-top: 20px; }
   #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
