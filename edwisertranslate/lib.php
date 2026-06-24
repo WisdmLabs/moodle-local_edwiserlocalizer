@@ -30,6 +30,10 @@ function local_edwisertranslate_should_display(): bool
     if ($PAGE->url && strpos($PAGE->url->out(false), 'theme/remui/customizer.php') !== false) {
         return false;
     }
+    // it stops the page from populating the button on grader.php page
+    if ($PAGE->url && strpos($PAGE->url->out(false), 'blocks/edwiser_grader/grader.php') !== false) {
+        return false;
+    }
     // Respect course "Force language" setting.
     if (!empty($COURSE->lang)) {
         return false;
