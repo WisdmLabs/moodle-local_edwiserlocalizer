@@ -115,11 +115,14 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
 
-body:not(.edw-translate) #page-footer #local-translator-wrapper {
-  padding-bottom: 26.97px; }
-  body:not(.edw-translate) #page-footer #local-translator-wrapper #langTranslatorDropdown {
-    border-radius: 6px;
-    border: 1px solid #343A40; }
+body:not(.edw-translate) #page-footer {
+  z-index: 0; }
+  body:not(.edw-translate) #page-footer #local-translator-wrapper {
+    left: 24px;
+    padding-bottom: 26.97px; }
+    body:not(.edw-translate) #page-footer #local-translator-wrapper #langTranslatorDropdown {
+      border-radius: 6px;
+      border: 1px solid #343A40; }
 
 @media (max-width: 426px) {
   body:not(.edw-translate) #page-footer #local-translator-wrapper {

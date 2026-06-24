@@ -189,7 +189,9 @@ body:not(.edw-translate) {
         }
     }
     #page-footer {
+        z-index: 0;
         #local-translator-wrapper {
+            left: 24px;
             padding-bottom: 26.97px;
             #langTranslatorDropdown {
                 border-radius: 6px;
