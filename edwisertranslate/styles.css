@@ -11,6 +11,7 @@
     #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .icon {
       filter: brightness(0.1) !important; }
     #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .selected-language {
+      font-family: 'Inter' !important;
       color: #343A40 !important; }
   #page-footer #local-translator-wrapper .theme-dark {
     background-color: #222222 !important;
@@ -32,9 +33,6 @@
     background-color: #FFFFFF; }
     #local-translator-wrapper #langTranslatorDropdown span {
       border-radius: 6px;
-      font-weight: 400;
-      color: #63718C;
-      font-family: 'Inter';
       font-size: 14px;
       line-height: 20px; }
     #local-translator-wrapper #langTranslatorDropdown .icon {
@@ -46,12 +44,6 @@
   #local-translator-wrapper .dropdown-menu.show {
     max-height: 380px;
     overflow-y: auto; }
-    #local-translator-wrapper .dropdown-menu.show a {
-      color: #4C5A73 !important;
-      font-weight: 400;
-      font-family: 'Inter'; }
-      #local-translator-wrapper .dropdown-menu.show a:hover {
-        color: #4C5A73 !important; }
 
 #usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
   padding-left: 0px;
@@ -68,7 +60,6 @@
 
 #usernavigation .darkmode-mobile-dropdown .dm-mobile-text,
 #usernavigation .darkmode-mobile-dropdown .em-mobile-text {
-  font-family: 'Inter';
   color: #4C5A73;
   font-size: 14px !important;
   font-weight: 400 !important; }

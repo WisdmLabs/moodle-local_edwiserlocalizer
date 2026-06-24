@@ -20,6 +20,7 @@
                 filter: brightness(0.1) !important;
             }
             .selected-language {
+                font-family: 'Inter' !important;
                 color: #343A40 !important;
             }    
         }
@@ -53,9 +54,6 @@
         background-color: #FFFFFF;
         span {
             border-radius: 6px;
-            font-weight: 400;
-            color: #63718C;
-            font-family: 'Inter';
             font-size: 14px;
             line-height: 20px;
         }
@@ -72,14 +70,6 @@
     .dropdown-menu.show {
         max-height: 380px;
         overflow-y: auto;
-        a {
-            color: #4C5A73 !important;
-            font-weight: 400;
-            font-family: 'Inter';
-            &:hover {
-                color: #4C5A73 !important;
-            }
-        }
     }
 }
 
@@ -103,7 +93,6 @@
     .darkmode-mobile-dropdown {
         .dm-mobile-text,
         .em-mobile-text {
-            font-family: 'Inter';
             color: #4C5A73;
             font-size: 14px !important;
             font-weight: 400 !important;

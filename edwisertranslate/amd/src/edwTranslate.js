@@ -55,6 +55,23 @@ define(['jquery'], function ($) {
                 $wrapper.addClass('dropdown').removeClass('dropup');
             }
 
+            var $textFontElement = $('#usernavigation #user-action-menu');
+            if ($textFontElement.length > 0) {
+                var fetchedFontFamily = $textFontElement.css('font-family');
+                $('#local-translator-wrapper span').css('font-family', fetchedFontFamily);
+            }
+            var $textColorElement = $('#user-action-menu .dropdown-item');
+            if ($textColorElement.length > 0) {
+                var fetchedFontColor = $textColorElement.css('color');
+                $('#local-translator-wrapper a').css({'font-family': fetchedFontFamily, 'color': fetchedFontColor});
+            }
+            var $headerElement = $('.primary-navigation .nav-link');
+            if ($headerElement.length > 0) {
+                var fetchedFontColor = $headerElement.css('color');
+                var fetchedFontWeight = $headerElement.css('font-weight');
+                $('#local-translator-wrapper span').css({'color': fetchedFontColor, 'font-weight': fetchedFontWeight});
+            }
+
             /**
              * Helper function to update the text inside the spans
              */
