@@ -47,7 +47,12 @@ class hook_listener
             'jsconfig' => json_encode([
                 'is_footer' => true,
                 'appearance' => get_config('local_edwisertranslate', 'appearance'),
-                'theme_name' => $PAGE->theme->name
+                'theme_name' => $PAGE->theme->name,
+                'currentlang_gtcode' => \local_edwisertranslate_get_gtcode($currentlang),
+                'str_light' => get_string('light', 'local_edwisertranslate'),
+                'str_dark'  => get_string('dark', 'local_edwisertranslate'),
+                'str_on'    => get_string('on', 'local_edwisertranslate'),
+                'str_off'   => get_string('off', 'local_edwisertranslate')
             ])
         ];
 

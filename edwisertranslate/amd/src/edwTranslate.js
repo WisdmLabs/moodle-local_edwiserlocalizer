@@ -196,8 +196,8 @@ define(['jquery'], function ($) {
 
     /**
      * Trigger Google Translate to switch to a target language.
-     * Sets the googtrans cookie and reloads the page so Google
-     * Translate activates on the next load.
+     * Clears any stale cookies, sets the googtrans cookie and reloads
+     * the page so Google Translate activates on the next load.
      *
      * @param {string} langPair e.g. "en|fr"
      */
@@ -209,9 +209,11 @@ define(['jquery'], function ($) {
         var sourceLang = parts[0];
         var targetLang = parts[1];
 
-        if (sourceLang === targetLang) {
-            clearGoogTransCookie();
-        } else {
+        // Always clear existing cookies first to prevent stale values
+        // (especially ones set with different domains/paths) from taking precedence.
+        clearGoogTransCookie();
+
+        if (sourceLang !== targetLang) {
             setGoogTransCookie('/' + sourceLang + '/' + targetLang);
         }
         window.location.reload();
@@ -229,21 +231,48 @@ define(['jquery'], function ($) {
 
     /**
      * Clear the googtrans cookie to restore original language.
+     * Aggressively clears all common domain/path variants so no
+     * stale cookie (e.g. set by Google Translate itself) survives.
      */
     function clearGoogTransCookie() {
-        document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-        document.cookie = 'googtrans=;path=/;domain=' + window.location.hostname +
-            ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        var hostname = window.location.hostname;
+        var expiry = ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        var domains = [hostname, '.' + hostname];
+
+        // Also attempt root domain (strip first subdomain).
+        var parts = hostname.split('.');
+        if (parts.length > 2) {
+            domains.push('.' + parts.slice(1).join('.'));
+        }
+
+        // Clear without explicit domain.
+        document.cookie = 'googtrans=;path=/' + expiry;
+
+        // Clear for each possible domain variant.
+        domains.forEach(function (domain) {
+            document.cookie = 'googtrans=;path=/;domain=' + domain + expiry;
+        });
     }
 
     /**
      * Get current target language from the googtrans cookie.
+     * Splits cookies explicitly so a value like "googtrans" inside
+     * another cookie cannot cause a false match.
      *
      * @returns {string|null} Target language code or null.
      */
     function getCurrentGoogTransLang() {
-        var match = document.cookie.match(/googtrans=\/[^/]+\/([^;]+)/);
-        return match ? match[1] : null;
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.indexOf('googtrans=') === 0) {
+                var match = cookie.match(/googtrans=\/[^/]+\/(.+)/);
+                if (match) {
+                    return match[1];
+                }
+            }
+        }
+        return null;
     }
 
     /**
