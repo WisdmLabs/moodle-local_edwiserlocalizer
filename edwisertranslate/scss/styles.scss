@@ -175,10 +175,7 @@ body:not(.edw-translate) {
         #langTranslatorDropdown {
             display: flex;
             align-items: center;
-            gap: 2px;
-            .icon {
-                margin-right: 0px !important;
-            }
+            left: -120px;
             .selected-language {
                 color: #343A40;
                 font-size: 12px !important;
