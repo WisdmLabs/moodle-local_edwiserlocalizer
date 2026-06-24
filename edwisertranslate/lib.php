@@ -25,9 +25,13 @@
 // plugin should display or not based on show icon
 function local_edwisertranslate_should_display(): bool
 {
-    global $PAGE;
+    global $PAGE, $COURSE;
     // it stops the page from populating the button on customizer.php page
     if ($PAGE->url && strpos($PAGE->url->out(false), 'theme/remui/customizer.php') !== false) {
+        return false;
+    }
+    // Respect course "Force language" setting.
+    if (!empty($COURSE->lang)) {
         return false;
     }
     // plugin is on/off
