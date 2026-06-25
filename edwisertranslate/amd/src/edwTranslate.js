@@ -61,18 +61,21 @@ define(['jquery'], function ($) {
                 var fetchedFontFamily = $textFontElement.css('font-family');
                 $('#local-translator-wrapper span').css('font-family', fetchedFontFamily);
             }
-            //it fetches the font color of the applied theme on dropdowns
-            var $textColorElement = $('#user-action-menu .dropdown-item');
-            if ($textColorElement.length > 0) {
-                var fetchedFontColor = $textColorElement.css('color');
-                $('#local-translator-wrapper a').css({'font-family': fetchedFontFamily, 'color': fetchedFontColor});
-            }
             //it fetches the font color of the applied theme on primary nav elements
             var $headerElement = $('.primary-navigation .nav-link');
             if ($headerElement.length > 0) {
                 var fetchedFontColor = $headerElement.css('color');
                 var fetchedFontWeight = $headerElement.css('font-weight');
                 $('#local-translator-wrapper span').css({'color': fetchedFontColor, 'font-weight': fetchedFontWeight});
+            }
+            //it fetches the font color of the applied theme on dropdowns
+            var $textColorElement = $('#user-action-menu .dropdown-item');
+            if ($textColorElement.length > 0) {
+                var fetchedFontColor = $textColorElement.css('color');
+                $('#local-translator-wrapper a').css({'font-weight': fetchedFontWeight, 'color': fetchedFontColor});
+                if (!config.is_footer) {
+                    $('#local-translator-wrapper a').css('font-family', fetchedFontFamily);
+                }
             }
 
             /**
