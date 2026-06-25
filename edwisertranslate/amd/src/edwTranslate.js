@@ -330,11 +330,27 @@ define(['jquery'], function ($) {
      * Initialize Google Translate integration.
      * Loads the hidden translator, wires click handlers,
      * and restores any previously selected language.
+     * If the cookie points to a language no longer in the
+     * admin-approved list, the cookie is cleared and the
+     * page reloads in the original language.
      */
     function initGoogleTranslate() {
         hideGoogleBranding();
         loadGoogleTranslate();
 
+        // Build a set of allowed GT languages from the current dropdown.
+        var allowedGtLangs = {};
+        $(SELECTORS.LANG_ITEM).each(function () {
+            allowedGtLangs[$(this).data('gtlang')] = true;
+        });
+
+        // Validate current cookie against allowed languages.
+        var currentGtLang = getCurrentGoogTransLang();
+        if (currentGtLang && !allowedGtLangs[currentGtLang]) {
+            clearGoogTransCookie();
+            window.location.reload();
+            return;
+        }
         $(document).on('click', SELECTORS.LANG_ITEM, function (e) {
             e.preventDefault();
             var $item = $(this);
@@ -345,7 +361,6 @@ define(['jquery'], function ($) {
             doTranslate(pageLanguage + '|' + gtLang);
         });
 
-        var currentGtLang = getCurrentGoogTransLang();
         if (currentGtLang && currentGtLang !== pageLanguage) {
             var $activeLang = $(SELECTORS.LANG_ITEM + "[data-gtlang='" + currentGtLang + "']");
             if ($activeLang.length) {
