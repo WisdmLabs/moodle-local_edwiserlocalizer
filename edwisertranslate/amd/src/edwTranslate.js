@@ -55,16 +55,19 @@ define(['jquery'], function ($) {
                 $wrapper.addClass('dropdown').removeClass('dropup');
             }
 
+            //it fetches the font family of the applied theme
             var $textFontElement = $('#usernavigation #user-action-menu');
             if ($textFontElement.length > 0) {
                 var fetchedFontFamily = $textFontElement.css('font-family');
                 $('#local-translator-wrapper span').css('font-family', fetchedFontFamily);
             }
+            //it fetches the font color of the applied theme on dropdowns
             var $textColorElement = $('#user-action-menu .dropdown-item');
             if ($textColorElement.length > 0) {
                 var fetchedFontColor = $textColorElement.css('color');
                 $('#local-translator-wrapper a').css({'font-family': fetchedFontFamily, 'color': fetchedFontColor});
             }
+            //it fetches the font color of the applied theme on primary nav elements
             var $headerElement = $('.primary-navigation .nav-link');
             if ($headerElement.length > 0) {
                 var fetchedFontColor = $headerElement.css('color');
