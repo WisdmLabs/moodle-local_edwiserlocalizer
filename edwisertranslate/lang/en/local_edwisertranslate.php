@@ -46,6 +46,7 @@ $string['light'] = 'Light';
 $string['dark'] = 'Dark';
 $string['on'] = 'On';
 $string['off'] = 'Off';
+$string['error_nolanguage'] = 'You must select at least one language to translate to.';
 $string['cachedef_translation'] = 'Edwiser Translation Cache';
 $string['enableusagetracking'] = 'Enable Usage Tracking';
 $string['enableusagetrackingdesc'] = '<strong>USAGE TRACKING NOTICE</strong>

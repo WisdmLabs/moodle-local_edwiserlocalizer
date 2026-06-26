@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'local_edwisertranslate';
 $plugin->release      = '1.0';
-$plugin->version      = 2026060502;
+$plugin->version      = 2026060504;
 $plugin->requires     = 2022041900;
 $plugin->maturity     = MATURITY_STABLE;

@@ -25,8 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-use core_admin\local\settings\autocomplete;
-
 $pluginname = get_string('pluginname', 'local_edwisertranslate');
 
 if ($hassiteconfig) {
@@ -206,7 +204,7 @@ if ($hassiteconfig) {
                 'yo'    => 'Yorùbá',
                 'zu'    => 'isiZulu',
             ];
-        $settings->add(new autocomplete(
+        $settings->add(new \local_edwisertranslate\translation_auto_complete(
             $name,
             $title,
             $description,
