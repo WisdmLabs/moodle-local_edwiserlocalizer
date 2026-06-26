@@ -225,6 +225,13 @@ body.pagelayout-login {
             left: 20px;
         }
     }
+    &.pagelayout-login.loginleft {
+        #local-translator-wrapper {
+            .dropdown-menu.show {
+                left: -32px !important;
+            }
+        }
+    }
 }
 
 #page-mod-quiz-attempt {

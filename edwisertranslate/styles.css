@@ -137,6 +137,9 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
   bottom: 20px;
   left: 20px; }
 
+body.pagelayout-login.pagelayout-login.loginleft #local-translator-wrapper .dropdown-menu.show {
+  left: -32px !important; }
+
 #page-mod-quiz-attempt .submitbtns {
   justify-content: space-between; }
 

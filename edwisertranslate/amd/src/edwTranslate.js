@@ -55,6 +55,12 @@ define(['jquery'], function ($) {
                 $wrapper.addClass('dropdown').removeClass('dropup');
             }
 
+            if (config.theme_name == "remui" &&
+                $('body').hasClass('pagelayout-login') &&
+                $('body').hasClass('loginleft')) {
+                    $wrapper.css({'right': '80px', 'left': 'unset'});
+            }
+
             //it fetches the font family of the applied theme
             var $textFontElement = $('#usernavigation #user-action-menu');
             if ($textFontElement.length > 0) {
