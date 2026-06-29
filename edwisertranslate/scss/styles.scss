@@ -20,7 +20,6 @@
                 filter: brightness(0.1) !important;
             }
             .selected-language {
-                font-family: 'Inter' !important;
                 color: #343A40 !important;
             }    
         }
@@ -30,12 +29,6 @@
             .selected-language {
                 color: #D1D1D1 !important;
             }    
-        }
-        .dropdown-menu.show a {
-            color: #343A40;
-        }
-        .dropdown-menu.show a:hover {
-            color: #343A40;
         }
     }
     .asw-menu {
@@ -81,10 +74,6 @@
 
 #usernavigation {
     #local-translator-wrapper {
-        #langTranslatorDropdown:not(.theme-dark) {
-            padding-left: 0px;
-            padding-right: 0px;
-        }
         .icon {
             margin-right: 4px;
         }
@@ -101,7 +90,6 @@
         .em-mobile-text {
             color: #4C5A73;
             font-size: 14px !important;
-            font-weight: 400 !important;
         }
     }
 }
