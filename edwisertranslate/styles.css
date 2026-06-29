@@ -9,22 +9,22 @@
   #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
     border: 1px solid #343A40 !important; }
     #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .icon {
-      filter: brightness(0.1) !important; }
+      filter: brightness(0.1); }
     #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .selected-language {
-      font-family: 'Inter' !important;
       color: #343A40 !important; }
   #page-footer #local-translator-wrapper .theme-dark {
     background-color: #222222 !important;
     border: 1px solid #D1D1D1 !important; }
     #page-footer #local-translator-wrapper .theme-dark .selected-language {
       color: #D1D1D1 !important; }
-  #page-footer #local-translator-wrapper .dropdown-menu.show a {
-    color: #343A40; }
-  #page-footer #local-translator-wrapper .dropdown-menu.show a:hover {
-    color: #343A40; }
   #page-footer .asw-menu .asw-menu-header font,
   #page-footer .asw-menu .feedback-heading font {
     color: #FFFFFF !important; }
+
+html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
+  color: white !important; }
+  html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown img {
+    filter: brightness(3) !important; }
 
 #local-translator-wrapper {
   max-width: 66px; }
@@ -32,7 +32,8 @@
     min-width: 81px; }
   #local-translator-wrapper #langTranslatorDropdown {
     height: 32px;
-    border: none;
+    background-color: white !important;
+    border: 1px solid #909BB1;
     padding: 6px 12px;
     background-color: #FFFFFF; }
     #local-translator-wrapper #langTranslatorDropdown span {
@@ -49,10 +50,6 @@
     max-height: 380px;
     overflow-y: auto; }
 
-#usernavigation #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
-  padding-left: 0px;
-  padding-right: 0px; }
-
 #usernavigation #local-translator-wrapper .icon {
   margin-right: 4px; }
 
@@ -65,8 +62,7 @@
 #usernavigation .darkmode-mobile-dropdown .dm-mobile-text,
 #usernavigation .darkmode-mobile-dropdown .em-mobile-text {
   color: #4C5A73;
-  font-size: 14px !important;
-  font-weight: 400 !important; }
+  font-size: 14px !important; }
 
 @media (min-width: 426px) {
   .darkoreditmode {

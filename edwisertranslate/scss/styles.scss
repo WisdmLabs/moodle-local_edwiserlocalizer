@@ -17,7 +17,7 @@
         #langTranslatorDropdown:not(.theme-dark) {
             border: 1px solid #343A40 !important;
             .icon {
-                filter: brightness(0.1) !important;
+                filter: brightness(0.1);
             }
             .selected-language {
                 color: #343A40 !important;
@@ -41,6 +41,17 @@
     }
 }
 
+html[nighteyeplgn="active"] {
+    #local-translator-wrapper {
+        #langTranslatorDropdown {
+            color: white !important;
+            img {
+                filter: brightness(3) !important;
+            }
+        }
+    }
+}
+
 #local-translator-wrapper {
     max-width: 66px;
     .dropdown-menu {
@@ -48,7 +59,8 @@
     }
     #langTranslatorDropdown {
         height: 32px;
-        border: none;
+        background-color: white !important;
+        border: 1px solid #909BB1;
         padding: 6px 12px;
         background-color: #FFFFFF;
         span {
