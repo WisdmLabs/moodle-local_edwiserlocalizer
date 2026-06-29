@@ -17,7 +17,7 @@
 /**
  * TODO describe file settings
  *
- * @package    local_edwiserlanguagetranslation
+ * @package    local_edwisertranslate
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Harshal Thakare
@@ -63,10 +63,10 @@ if ($hassiteconfig) {
             $title,
             $description,
             $default,
-            array(
+            [
                 0 => get_string('header', 'local_edwisertranslate'),
-                1 => get_string('footer', 'local_edwisertranslate')
-            )
+                1 => get_string('footer', 'local_edwisertranslate'),
+            ]
         ));
 
         // Choose where the icon should appear on your site.
@@ -79,10 +79,10 @@ if ($hassiteconfig) {
             $title,
             $description,
             $default,
-            array(
+            [
                 0 => get_string('across_site', 'local_edwisertranslate'),
-                1 => get_string('coursepage', 'local_edwisertranslate')
-            )
+                1 => get_string('coursepage', 'local_edwisertranslate'),
+            ]
         ));
 
         // The original language is the language in which your website is written/
@@ -231,10 +231,10 @@ if ($hassiteconfig) {
             $title,
             $description,
             $default,
-            array(
+            [
                 0 => get_string('light', 'local_edwisertranslate'),
-                1 => get_string('dark', 'local_edwisertranslate')
-            )
+                1 => get_string('dark', 'local_edwisertranslate'),
+            ]
         ));
         // CSS selectors to exclude from Google Translate.
         $name = 'local_edwisertranslate/notranslate_selectors';
