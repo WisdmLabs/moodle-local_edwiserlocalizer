@@ -31,6 +31,12 @@
                 color: #D1D1D1 !important;
             }    
         }
+        .dropdown-menu.show a {
+            color: #343A40;
+        }
+        .dropdown-menu.show a:hover {
+            color: #343A40;
+        }
     }
     .asw-menu {
         .asw-menu-header,            

@@ -83,6 +83,11 @@ define(['jquery'], function ($) {
                     $('#local-translator-wrapper a').css('font-family', fetchedFontFamily);
                 }
             }
+            var $dropdowncolor = $('.dropdown-menu');
+            if ($dropdowncolor.length > 0) {
+                var fetchDropdownColor = $dropdowncolor.css('color');
+                $('#local-translator-wrapper a').css('color', fetchDropdownColor);
+            }
 
             /**
              * Helper function to update the text inside the spans
