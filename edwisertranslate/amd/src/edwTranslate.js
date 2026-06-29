@@ -61,31 +61,33 @@ define(['jquery'], function ($) {
                     $wrapper.css({'right': '80px', 'left': 'unset'});
             }
 
-            if (config.is_footer) {
-                function attachTranslatorToFooter() {
-                    $wrapper.addClass('dropup').removeClass('dropdown');
-                    const footerConfig = [
-                        { selector: '#page-footer #footer-column-1', action: 'append' },
-                        { selector: '#page-footer .footer-container', action: 'prepend' },
-                        { selector: '#page-footer', action: 'prepend' }
-                    ];
-                    for (const footer of footerConfig) {
-                        const $target = $(footer.selector);
-                        if ($target.length > 0) {
-                            var isAlreadyAppended = (footer.action === 'append' && $target.children().last().is($wrapper));
-                            var isAlreadyPrepended = (footer.action === 'prepend' && $target.children().first().is($wrapper));
-                            
-                            if (!isAlreadyAppended && !isAlreadyPrepended) {
-                                if (footer.action === 'append') {
-                                    $target.last().append($wrapper);
-                                } else {
-                                    $wrapper.prependTo($target);
-                                }
+            /**
+             * Helper function to add the lang button in footer in the preview mode
+             */
+            function attachTranslatorToFooter() {
+                $wrapper.addClass('dropup').removeClass('dropdown');
+                const footerConfig = [
+                    { selector: '#page-footer #footer-column-1', action: 'append' },
+                    { selector: '#page-footer .footer-container', action: 'prepend' },
+                    { selector: '#page-footer', action: 'prepend' }
+                ];
+                for (const footer of footerConfig) {
+                    const $target = $(footer.selector);
+                    if ($target.length > 0) {
+                        var isAlreadyAppended = (footer.action === 'append' && $target.children().last().is($wrapper));
+                        var isAlreadyPrepended = (footer.action === 'prepend' && $target.children().first().is($wrapper));
+                        if (!isAlreadyAppended && !isAlreadyPrepended) {
+                            if (footer.action === 'append') {
+                                $target.last().append($wrapper);
+                            } else {
+                                $wrapper.prependTo($target);
                             }
-                            break; // Stop the loop when we find a match
                         }
+                        break; // Stop the loop when we find a match
                     }
                 }
+            }
+            if (config.is_footer) {
 
                 attachTranslatorToFooter();
 
@@ -94,7 +96,6 @@ define(['jquery'], function ($) {
 
                     for (var i = 0; i < mutations.length; i++) {
                         var target = mutations[i].target;
-                        
                         if (target.id === 'local-translator-wrapper' || $(target).closest('#local-translator-wrapper').length) {
                             continue;
                         }
