@@ -29,10 +29,6 @@ class hook_listener
         if ($placement != 1) {
             return;
         }
-        // it stops the page from populating the button on home.php page when button should be strickly shown on the course page
-        if ($PAGE->url && strpos($PAGE->url->out(false), '?redirect=0') !== false) {
-            return;
-        }
         // check weather it should display
         if (!\local_edwisertranslate_should_display()) {
             return;

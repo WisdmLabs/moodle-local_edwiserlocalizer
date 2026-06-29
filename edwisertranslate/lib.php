@@ -50,7 +50,8 @@ function local_edwisertranslate_should_display(): bool
         return true;
     }
     if ($scope == 1) {
-        if ($PAGE->context->contextlevel == CONTEXT_COURSE || $PAGE->course->id > SITEID) {
+        $iscourselayout = ($PAGE->pagelayout == 'course');
+        if ($iscourselayout) {
             return true;
         }
     }
