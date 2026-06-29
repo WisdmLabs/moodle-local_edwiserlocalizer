@@ -169,3 +169,7 @@ body.pagelayout-login.pagelayout-login.loginleft #local-translator-wrapper .drop
 
 body {
   top: 0 !important; }
+
+/* Prevent font tags from altering layout or typography */
+font[style*="vertical-align: inherit"] {
+  vertical-align: initial !important; }
