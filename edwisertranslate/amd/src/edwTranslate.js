@@ -61,32 +61,8 @@ define(['jquery'], function ($) {
                     $wrapper.css({'right': '80px', 'left': 'unset'});
             }
 
-            //it fetches the font family of the applied theme
-            var $textFontElement = $('#usernavigation #user-action-menu');
-            if ($textFontElement.length > 0) {
-                var fetchedFontFamily = $textFontElement.css('font-family');
-                $('#local-translator-wrapper span').css('font-family', fetchedFontFamily);
-            }
-            //it fetches the font color of the applied theme on primary nav elements
-            var $headerElement = $('.primary-navigation .nav-link');
-            if ($headerElement.length > 0) {
-                var fetchedFontColor = $headerElement.css('color');
-                var fetchedFontWeight = $headerElement.css('font-weight');
-                $('#local-translator-wrapper span').css({'color': fetchedFontColor, 'font-weight': fetchedFontWeight});
-            }
-            //it fetches the font color of the applied theme on dropdowns
-            var $textColorElement = $('#user-action-menu .dropdown-item');
-            if ($textColorElement.length > 0) {
-                var fetchedFontColor = $textColorElement.css('color');
-                $('#local-translator-wrapper a').css({'font-weight': fetchedFontWeight, 'color': fetchedFontColor});
-                if (!config.is_footer) {
-                    $('#local-translator-wrapper a').css('font-family', fetchedFontFamily);
-                }
-            }
-            var $dropdowncolor = $('.dropdown-menu');
-            if ($dropdowncolor.length > 0) {
-                var fetchDropdownColor = $dropdowncolor.css('color');
-                $('#local-translator-wrapper a').css('color', fetchDropdownColor);
+            if (config.theme_name == "remui") {
+                $('#local-translator-wrapper a').css('color', config.dropdown_textColor);
             }
 
             /**

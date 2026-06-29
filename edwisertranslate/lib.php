@@ -111,7 +111,8 @@ function local_edwisertranslate_render_navbar_output(): string
             'str_dark'  => get_string('dark', 'local_edwisertranslate'),
             'str_on'    => get_string('on', 'local_edwisertranslate'),
             'str_off'   => get_string('off', 'local_edwisertranslate'),
-            'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang)
+            'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
+            'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor')
         ])
     ];
 
