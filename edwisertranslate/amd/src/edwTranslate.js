@@ -317,6 +317,69 @@ define(['jquery'], function ($) {
     }
 
     /**
+     * Apply translate="no" to elements matching admin-provided selectors.
+     * Marks existing elements immediately and watches for dynamically
+     * added nodes so AJAX-injected content is protected before Google
+     * Translate processes it.
+     *
+     * @param {string[]} selectors List of CSS selector strings.
+     */
+    function applyNoTranslate(selectors) {
+        if (!selectors || selectors.length === 0) {
+            return;
+        }
+
+        /**
+         * Mark a single element with translate="no".
+         *
+         * @param {Element} el The DOM element to mark.
+         */
+        function markElement(el) {
+            el.setAttribute('translate', 'no');
+        }
+
+        /**
+         * Mark all elements matching selectors within a subtree.
+         *
+         * @param {Element} root The root element to search within.
+         */
+        function markSubtree(root) {
+            for (var s = 0; s < selectors.length; s++) {
+                var selector = selectors[s];
+                try {
+                    if (root.matches && root.matches(selector)) {
+                        markElement(root);
+                    }
+                    var nodes = root.querySelectorAll(selector);
+                    for (var k = 0; k < nodes.length; k++) {
+                        markElement(nodes[k]);
+                    }
+                } catch (e) {
+                    // Invalid selector — silently ignore.
+                }
+            }
+        }
+
+        // Mark everything currently in the DOM.
+        markSubtree(document.body);
+
+        // Watch for new nodes injected by AJAX.
+        var observer = new MutationObserver(function (mutations) {
+            for (var i = 0; i < mutations.length; i++) {
+                var addedNodes = mutations[i].addedNodes;
+                for (var j = 0; j < addedNodes.length; j++) {
+                    var node = addedNodes[j];
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        markSubtree(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    /**
      * Initialize Google Translate integration.
      * Loads the hidden translator, wires click handlers,
      * and restores any previously selected language.
@@ -328,6 +391,10 @@ define(['jquery'], function ($) {
         hideGoogleBranding();
         loadGoogleTranslate();
 
+        // Apply admin-defined "do not translate" selectors.
+        if (config.notranslate_selectors && config.notranslate_selectors.length > 0) {
+            applyNoTranslate(config.notranslate_selectors);
+        }
         // Build a set of allowed GT languages from the current dropdown.
         var allowedGtLangs = {};
         $(SELECTORS.LANG_ITEM).each(function () {

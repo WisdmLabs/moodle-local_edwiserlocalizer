@@ -76,6 +76,30 @@ function local_edwisertranslate_get_gtcode(string $moodlecode): string
 }
 
 //navbar
+/**
+ * Parse the admin-defined "do not translate" selectors from settings.
+ *
+ * @return array List of CSS selector strings.
+ */
+function local_edwisertranslate_get_notranslate_selectors(): array
+{
+    $raw = get_config('local_edwisertranslate', 'notranslate_selectors');
+    if (empty($raw)) {
+        return [];
+    }
+    // Support both newlines and commas as separators.
+    $parts = preg_split('/[\r\n,]+/', $raw);
+    $selectors = [];
+    foreach ($parts as $part) {
+        $part = trim($part);
+        if ($part !== '') {
+            $selectors[] = $part;
+        }
+    }
+    return $selectors;
+}
+
+//navbar
 function local_edwisertranslate_render_navbar_output(): string
 {
     global $PAGE, $OUTPUT;
@@ -112,7 +136,8 @@ function local_edwisertranslate_render_navbar_output(): string
             'str_on'    => get_string('on', 'local_edwisertranslate'),
             'str_off'   => get_string('off', 'local_edwisertranslate'),
             'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
-            'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor')
+            'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor'),
+            'notranslate_selectors' => local_edwisertranslate_get_notranslate_selectors()
         ])
     ];
 

@@ -48,6 +48,8 @@ $string['on'] = 'On';
 $string['off'] = 'Off';
 $string['error_nolanguage'] = 'You must select at least one language to translate to.';
 $string['cachedef_translation'] = 'Edwiser Translation Cache';
+$string['notranslate_selectors'] = 'Exclude from translation';
+$string['notranslate_selectors_desc'] = 'Enter CSS selectors for elements that should not be translated by Google Translate. You can separate selectors with commas or place one per line. For example: <code>.block_calendar_month, #page-header</code> or <code>.course-section .summary</code>.';
 $string['enableusagetracking'] = 'Enable Usage Tracking';
 $string['enableusagetrackingdesc'] = '<strong>USAGE TRACKING NOTICE</strong>
 

@@ -56,7 +56,8 @@ class hook_listener
                 'str_dark'  => get_string('dark', 'local_edwisertranslate'),
                 'str_on'    => get_string('on', 'local_edwisertranslate'),
                 'str_off'   => get_string('off', 'local_edwisertranslate'),
-                'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor')
+		'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor'),
+                'notranslate_selectors' => \local_edwisertranslate_get_notranslate_selectors()
             ])
         ];
 

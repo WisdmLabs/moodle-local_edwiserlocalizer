@@ -236,6 +236,12 @@ if ($hassiteconfig) {
                 1 => get_string('dark', 'local_edwisertranslate')
             )
         ));
+        // CSS selectors to exclude from Google Translate.
+        $name = 'local_edwisertranslate/notranslate_selectors';
+        $title = get_string('notranslate_selectors', 'local_edwisertranslate');
+        $description = get_string('notranslate_selectors_desc', 'local_edwisertranslate');
+        $default = '';
+        $settings->add(new admin_setting_configtextarea($name, $title, $description, $default));
         // Usage tracking GDPR setting.
         $name = 'local_edwisertranslate/enableusagetracking';
         $title = get_string('enableusagetracking', 'local_edwisertranslate');
