@@ -1,1 +1,1 @@
-# moodle-local_edwisertranslate
+# moodle-local_edwiserlocalizer
