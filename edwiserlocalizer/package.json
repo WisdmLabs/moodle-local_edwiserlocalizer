@@ -1,5 +1,5 @@
 {
-    "name": "moodle-local_edwisertranslate",
+    "name": "moodle-local_edwiserlocalizer",
     "devDependencies": {
         "grunt": "^1.6.1",
         "grunt-contrib-clean": "^2.0.1",

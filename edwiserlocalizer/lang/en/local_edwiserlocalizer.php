@@ -17,7 +17,7 @@
 /**
  * English language pack for local_edwiserlanguagetranslation
  *
- * @package    local_edwisertranslate
+ * @package    local_edwiserlocalizer
  * @category   string
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Edwiser Translation';
-$string['local_edwisertranslate'] = 'Edwiser Translation';
+$string['pluginname'] = 'Edwiser Localizer';
+$string['local_edwiserlocalizer'] = 'Edwiser Localizer';
 $string['enable'] = 'Enable';
 $string['enable_desc'] = 'Enabling this will display the language translation on your site.';
 $string['placement'] = 'Placement';
@@ -47,7 +47,7 @@ $string['dark'] = 'Dark';
 $string['on'] = 'On';
 $string['off'] = 'Off';
 $string['error_nolanguage'] = 'You must select at least one language.';
-$string['cachedef_translation'] = 'Edwiser Translation Cache';
+$string['cachedef_translation'] = 'Edwiser Localizer Cache';
 $string['notranslate_selectors'] = 'Exclude from translation';
 $string['notranslate_selectors_desc'] = 'Enter CSS selectors for elements that should not be translated by Google Translate. You can separate selectors with commas or place one per line. For example: <code>.block_calendar_month, #page-header</code> or <code>.course-section .summary</code>.';
 $string['enableusagetracking'] = 'Enable Usage Tracking';

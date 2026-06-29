@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template local_edwisertranslate/ templates/lang_switcher.mustache
+    @template local_edwiserlocalizer/ templates/lang_switcher.mustache
 
     This template renders a language translator dropdown or dropup menu.
     It includes a language toggle button, a list of available languages,
@@ -53,10 +53,10 @@
 
     <button class="btn  dropdown-toggle {{#appearance}}theme-dark{{/appearance}}" type="button" id="langTranslatorDropdown" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{#appearance}}
-            {{#pix}} dark-globe, local_edwisertranslate {{/pix}}
+            {{#pix}} dark-globe, local_edwiserlocalizer {{/pix}}
         {{/appearance}}
         {{^appearance}}
-            {{#pix}} light-globe, local_edwisertranslate {{/pix}}
+            {{#pix}} light-globe, local_edwiserlocalizer {{/pix}}
         {{/appearance}}
         <span class="selected-language">{{currentlang}}</span>
     </button>
@@ -74,7 +74,7 @@
 </div>
 
 {{#js}}
-require(['local_edwisertranslate/edwTranslate'], function(Translator) {
+require(['local_edwiserlocalizer/edwTranslate'], function(Translator) {
     Translator.init({{{jsconfig}}});
 });
 {{/js}}

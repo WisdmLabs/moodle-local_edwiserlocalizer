@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_edwisertranslate;
+namespace local_edwiserlocalizer;
 
 use core_admin\local\settings\autocomplete;
 
@@ -48,7 +48,7 @@ class translation_auto_complete extends autocomplete
         }
         if (empty($save)) {
             // Return the error string it shows a UI error.
-            return get_string('error_nolanguage', 'local_edwisertranslate');
+            return get_string('error_nolanguage', 'local_edwiserlocalizer');
         }
 
         return ($this->config_write($this->name, implode($this->delimiter, $save)) ? '' : get_string('errorsetting', 'admin'));

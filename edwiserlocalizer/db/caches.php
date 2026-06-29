@@ -17,7 +17,7 @@
 /**
  * Cache definitions for Edwiser Language Translation
  *
- * @package    local_edwisertranslate
+ * @package    local_edwiserlocalizer
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

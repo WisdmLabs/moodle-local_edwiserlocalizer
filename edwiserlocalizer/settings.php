@@ -17,7 +17,7 @@
 /**
  * TODO describe file settings
  *
- * @package    local_edwisertranslate
+ * @package    local_edwiserlocalizer
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Harshal Thakare
@@ -25,38 +25,37 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$pluginname = get_string('pluginname', 'local_edwisertranslate');
+
+$pluginname = get_string('pluginname', 'local_edwiserlocalizer');
 
 if ($hassiteconfig) {
-
     // Create plugin category under Local plugins.
     $ADMIN->add(
         'localplugins',
         new admin_category(
-            'local_edwisertranslate_settings',
-            get_string('pluginname', 'local_edwisertranslate')
+            'local_edwiserlocalizer_settings',
+            get_string('pluginname', 'local_edwiserlocalizer')
         )
     );
 
     // Create settings page.
     $settings = new admin_settingpage(
-        'local_edwisertranslate',
-        get_string('pluginname', 'local_edwisertranslate')
+        'local_edwiserlocalizer',
+        get_string('pluginname', 'local_edwiserlocalizer')
     );
 
     if ($ADMIN->fulltree) {
-
         // Enabling this will display the language translation on your site.
-        $name = 'local_edwisertranslate/enable';
-        $title = get_string('enable', 'local_edwisertranslate');
-        $description = get_string('enable_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/enable';
+        $title = get_string('enable', 'local_edwiserlocalizer');
+        $description = get_string('enable_desc', 'local_edwiserlocalizer');
         $default = true;
         $settings->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
 
         // Choose where the icon should appear on your site.
-        $name = 'local_edwisertranslate/placement';
-        $title = get_string('placement', 'local_edwisertranslate');
-        $description = get_string('placement_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/placement';
+        $title = get_string('placement', 'local_edwiserlocalizer');
+        $description = get_string('placement_desc', 'local_edwiserlocalizer');
         $default = 0;
         $settings->add(new admin_setting_configselect(
             $name,
@@ -64,15 +63,15 @@ if ($hassiteconfig) {
             $description,
             $default,
             [
-                0 => get_string('header', 'local_edwisertranslate'),
-                1 => get_string('footer', 'local_edwisertranslate'),
+                0 => get_string('header', 'local_edwiserlocalizer'),
+                1 => get_string('footer', 'local_edwiserlocalizer'),
             ]
         ));
 
         // Choose where the icon should appear on your site.
-        $name = 'local_edwisertranslate/showicon';
-        $title = get_string('showicon', 'local_edwisertranslate');
-        $description = get_string('showicon_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/showicon';
+        $title = get_string('showicon', 'local_edwiserlocalizer');
+        $description = get_string('showicon_desc', 'local_edwiserlocalizer');
         $default = 0;
         $settings->add(new admin_setting_configselect(
             $name,
@@ -80,15 +79,15 @@ if ($hassiteconfig) {
             $description,
             $default,
             [
-                0 => get_string('across_site', 'local_edwisertranslate'),
-                1 => get_string('coursepage', 'local_edwisertranslate'),
+                0 => get_string('across_site', 'local_edwiserlocalizer'),
+                1 => get_string('coursepage', 'local_edwiserlocalizer'),
             ]
         ));
 
         // The original language is the language in which your website is written/
-        $name = 'local_edwisertranslate/translateto';
-        $title = get_string('translateto', 'local_edwisertranslate');
-        $description = get_string('translateto_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/translateto';
+        $title = get_string('translateto', 'local_edwiserlocalizer');
+        $description = get_string('translateto_desc', 'local_edwiserlocalizer');
         $default = ['en'];
         $choices =
             [
@@ -204,7 +203,7 @@ if ($hassiteconfig) {
                 'yo'    => 'Yorùbá',
                 'zu'    => 'isiZulu',
             ];
-        $settings->add(new \local_edwisertranslate\translation_auto_complete(
+        $settings->add(new \local_edwiserlocalizer\translation_auto_complete(
             $name,
             $title,
             $description,
@@ -214,7 +213,7 @@ if ($hassiteconfig) {
                 'multiple'        => true,
                 'tags'            => false,
                 'showsuggestions' => true,
-                'placeholder'     => get_string('chooselanguages', 'local_edwisertranslate'),
+                'placeholder'     => get_string('chooselanguages', 'local_edwiserlocalizer'),
                 'manageurl'       => false,
                 'managetext'      => false,
             ]
@@ -222,9 +221,9 @@ if ($hassiteconfig) {
 
 
         // Choose the appearance of the language switcher to match your site.
-        $name = 'local_edwisertranslate/appearance';
-        $title = get_string('appearance', 'local_edwisertranslate');
-        $description = get_string('appearance_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/appearance';
+        $title = get_string('appearance', 'local_edwiserlocalizer');
+        $description = get_string('appearance_desc', 'local_edwiserlocalizer');
         $default = 0;
         $settings->add(new admin_setting_configselect(
             $name,
@@ -232,20 +231,22 @@ if ($hassiteconfig) {
             $description,
             $default,
             [
-                0 => get_string('light', 'local_edwisertranslate'),
-                1 => get_string('dark', 'local_edwisertranslate'),
+                0 => get_string('light', 'local_edwiserlocalizer'),
+                1 => get_string('dark', 'local_edwiserlocalizer'),
             ]
         ));
+
         // CSS selectors to exclude from Google Translate.
-        $name = 'local_edwisertranslate/notranslate_selectors';
-        $title = get_string('notranslate_selectors', 'local_edwisertranslate');
-        $description = get_string('notranslate_selectors_desc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/notranslate_selectors';
+        $title = get_string('notranslate_selectors', 'local_edwiserlocalizer');
+        $description = get_string('notranslate_selectors_desc', 'local_edwiserlocalizer');
         $default = '';
         $settings->add(new admin_setting_configtextarea($name, $title, $description, $default));
+
         // Usage tracking GDPR setting.
-        $name = 'local_edwisertranslate/enableusagetracking';
-        $title = get_string('enableusagetracking', 'local_edwisertranslate');
-        $description = get_string('enableusagetrackingdesc', 'local_edwisertranslate');
+        $name = 'local_edwiserlocalizer/enableusagetracking';
+        $title = get_string('enableusagetracking', 'local_edwiserlocalizer');
+        $description = get_string('enableusagetrackingdesc', 'local_edwiserlocalizer');
         $default = true;
         $settings->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
     }

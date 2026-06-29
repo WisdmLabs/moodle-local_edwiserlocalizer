@@ -14,18 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Version information for Edwiser Language Translation
- *
- * @package    local_edwisertranslate
- * @copyright  2026 YOUR NAME <your@email.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component    = 'local_edwisertranslate';
-$plugin->release      = '1.0';
-$plugin->version      = 2026060505;
-$plugin->requires     = 2022041900;
-$plugin->maturity     = MATURITY_STABLE;
+$callbacks = [
+    [
+        'hook' => \core\hook\output\before_footer_html_generation::class,
+        'callback' => \local_edwiserlocalizer\hook_listener::class . '::before_footer_html_generation',
+    ],
+];

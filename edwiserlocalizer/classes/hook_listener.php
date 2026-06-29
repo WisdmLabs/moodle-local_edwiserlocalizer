@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_edwisertranslate;
+namespace local_edwiserlocalizer;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -23,14 +23,14 @@ class hook_listener
     public static function before_footer_html_generation(\core\hook\output\before_footer_html_generation $hook): void
     {
         global $PAGE, $OUTPUT, $CFG;
-        require_once($CFG->dirroot . '/local/edwisertranslate/lib.php');
+        require_once($CFG->dirroot . '/local/edwiserlocalizer/lib.php');
         // footer is 1
-        $placement = get_config('local_edwisertranslate', 'placement');
+        $placement = get_config('local_edwiserlocalizer', 'placement');
         if ($placement != 1) {
             return;
         }
         // check weather it should display
-        if (!\local_edwisertranslate_should_display()) {
+        if (!\local_edwiserlocalizer_should_display()) {
             return;
         }
 
@@ -38,26 +38,26 @@ class hook_listener
         $currentlang = current_language();
         $context = [
             'is_footer' => true,
-            'appearance' => get_config('local_edwisertranslate', 'appearance'),
-            'languages' => \local_edwisertranslate_get_language(),
+            'appearance' => get_config('local_edwiserlocalizer', 'appearance'),
+            'languages' => \local_edwiserlocalizer_get_language(),
             'currentlang' => strtoupper($currentlang),
-            'currentlang_gtcode' => \local_edwisertranslate_get_gtcode($currentlang),
+            'currentlang_gtcode' => \local_edwiserlocalizer_get_gtcode($currentlang),
             //js context
             'jsconfig' => json_encode([
                 'is_footer' => true,
-                'appearance' => get_config('local_edwisertranslate', 'appearance'),
+                'appearance' => get_config('local_edwiserlocalizer', 'appearance'),
                 'theme_name' => $PAGE->theme->name,
-                'currentlang_gtcode' => \local_edwisertranslate_get_gtcode($currentlang),
-                'str_light' => get_string('light', 'local_edwisertranslate'),
-                'str_dark'  => get_string('dark', 'local_edwisertranslate'),
-                'str_on'    => get_string('on', 'local_edwisertranslate'),
-                'str_off'   => get_string('off', 'local_edwisertranslate'),
+                'currentlang_gtcode' => \local_edwiserlocalizer_get_gtcode($currentlang),
+                'str_light' => get_string('light', 'local_edwiserlocalizer'),
+                'str_dark'  => get_string('dark', 'local_edwiserlocalizer'),
+                'str_on'    => get_string('on', 'local_edwiserlocalizer'),
+                'str_off'   => get_string('off', 'local_edwiserlocalizer'),
 		'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor'),
-                'notranslate_selectors' => \local_edwisertranslate_get_notranslate_selectors()
+                'notranslate_selectors' => \local_edwiserlocalizer_get_notranslate_selectors()
             ])
         ];
 
-        $html = $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
+        $html = $OUTPUT->render_from_template('local_edwiserlocalizer/lang_switcher', $context);
         $hook->add_html($html);
     }
 }

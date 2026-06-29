@@ -17,19 +17,20 @@
 /**
  * Callback implementations for Edwiser Language Translation
  *
- * @package    local_edwisertranslate
+ * @package    local_edwiserlocalizer
  * @copyright  2026 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 // plugin should display or not based on show icon
-function local_edwisertranslate_should_display(): bool
+function local_edwiserlocalizer_should_display(): bool
 {
     global $PAGE, $COURSE;
     // it stops the page from populating the button on customizer.php page
     if ($PAGE->url && strpos($PAGE->url->out(false), 'theme/remui/customizer.php') !== false) {
         return false;
     }
+
     // it stops the page from populating the button on grader.php page
     if ($PAGE->url && strpos($PAGE->url->out(false), 'blocks/edwiser_grader/grader.php') !== false) {
         return false;
@@ -38,14 +39,15 @@ function local_edwisertranslate_should_display(): bool
     if (!empty($COURSE->lang)) {
         return false;
     }
+
     // plugin is on/off
-    $isenabled = get_config('local_edwisertranslate', 'enable');
+    $isenabled = get_config('local_edwiserlocalizer', 'enable');
     if (!$isenabled) {
         return false;
     }
 
     // plugin is set across the site or course page
-    $scope = get_config('local_edwisertranslate', 'showicon');
+    $scope = get_config('local_edwiserlocalizer', 'showicon');
     if ($scope == 0) {
         return true;
     }
@@ -64,7 +66,7 @@ function local_edwisertranslate_should_display(): bool
  * @param string $moodlecode Moodle language code (e.g. 'zh_cn').
  * @return string Google Translate language code (e.g. 'zh-CN').
  */
-function local_edwisertranslate_get_gtcode(string $moodlecode): string
+function local_edwiserlocalizer_get_gtcode(string $moodlecode): string
 {
     $map = [
         'zh_cn' => 'zh-CN',
@@ -82,9 +84,9 @@ function local_edwisertranslate_get_gtcode(string $moodlecode): string
  *
  * @return array List of CSS selector strings.
  */
-function local_edwisertranslate_get_notranslate_selectors(): array
+function local_edwiserlocalizer_get_notranslate_selectors(): array
 {
-    $raw = get_config('local_edwisertranslate', 'notranslate_selectors');
+    $raw = get_config('local_edwiserlocalizer', 'notranslate_selectors');
     if (empty($raw)) {
         return [];
     }
@@ -101,56 +103,60 @@ function local_edwisertranslate_get_notranslate_selectors(): array
 }
 
 //navbar
-function local_edwisertranslate_render_navbar_output(): string
+function local_edwiserlocalizer_render_navbar_output(): string
 {
     global $PAGE, $OUTPUT;
+
     // Usage tracking - runs for admins on every page load.
     if (is_siteadmin()) {
-        $tracker = new \local_edwisertranslate\usage_tracking();
+        $tracker = new \local_edwiserlocalizer\usage_tracking();
         $tracker->send_usage_analytics();
     }
-    $placement = get_config('local_edwisertranslate', 'placement');
+
+    $placement = get_config('local_edwiserlocalizer', 'placement');
 
     //header is 0
     if ($placement == 1) {
         return '';
     }
 
-    if (!local_edwisertranslate_should_display()) {
+    if (!local_edwiserlocalizer_should_display()) {
         return '';
     }
 
     $currentlang = current_language();
     $context = [
         'is_footer' => false,
-        'appearance' => get_config('local_edwisertranslate', 'appearance'),
-        'languages' => local_edwisertranslate_get_language(),
+        'appearance' => get_config('local_edwiserlocalizer', 'appearance'),
+        'languages' => local_edwiserlocalizer_get_language(),
         'currentlang' => strtoupper($currentlang),
-        'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
+        'currentlang_gtcode' => local_edwiserlocalizer_get_gtcode($currentlang),
         //js context
         'jsconfig' => json_encode([
             'is_footer' => false,
-            'appearance' => get_config('local_edwisertranslate', 'appearance'),
+            'appearance' => get_config('local_edwiserlocalizer', 'appearance'),
             'theme_name' => $PAGE->theme->name,
-            'str_light' => get_string('light', 'local_edwisertranslate'),
-            'str_dark'  => get_string('dark', 'local_edwisertranslate'),
-            'str_on'    => get_string('on', 'local_edwisertranslate'),
-            'str_off'   => get_string('off', 'local_edwisertranslate'),
-            'currentlang_gtcode' => local_edwisertranslate_get_gtcode($currentlang),
+            'str_light' => get_string('light', 'local_edwiserlocalizer'),
+            'str_dark'  => get_string('dark', 'local_edwiserlocalizer'),
+            'str_on'    => get_string('on', 'local_edwiserlocalizer'),
+            'str_off'   => get_string('off', 'local_edwiserlocalizer'),
+            'currentlang_gtcode' => local_edwiserlocalizer_get_gtcode($currentlang),
             'dropdown_textColor' => get_config('theme_remui', 'themecolors-textcolor'),
-            'notranslate_selectors' => local_edwisertranslate_get_notranslate_selectors()
+            'notranslate_selectors' => local_edwiserlocalizer_get_notranslate_selectors()
         ])
+
     ];
 
+
     // output to mustache file
-    return $OUTPUT->render_from_template('local_edwisertranslate/lang_switcher', $context);
+    return $OUTPUT->render_from_template('local_edwiserlocalizer/lang_switcher', $context);
 }
 
-function local_edwisertranslate_get_language(): array
+function local_edwiserlocalizer_get_language(): array
 {
     global $PAGE;
 
-    $userChossenLang = get_config('local_edwisertranslate', 'translateto');
+    $userChossenLang = get_config('local_edwiserlocalizer', 'translateto');
     // if no lang choosen add english
     if (empty($userChossenLang)) {
         $userChossenLang = 'en';
@@ -282,7 +288,7 @@ function local_edwisertranslate_get_language(): array
         $language_context[] = [
             'code' => $code,
             'name' => $available_lang[$code],
-            'gtcode' => local_edwisertranslate_get_gtcode($code),
+            'gtcode' => local_edwiserlocalizer_get_gtcode($code),
             'isactive' => ($code === $currentlang),
             'switchurl' => (new moodle_url($PAGE->url, ['lang' => $code]))->out(false)
         ];

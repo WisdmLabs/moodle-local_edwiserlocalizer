@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Edwiser Translation Usage Tracking.
+ * Edwiser Localizer Usage Tracking.
  *
- * @package    local_edwisertranslate
+ * @package    local_edwiserlocalizer
  * @copyright  2026 Wisdmlabs
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_edwisertranslate;
+namespace local_edwiserlocalizer;
 
 /**
- * Usage tracking for Edwiser Translation plugin.
+ * Usage tracking for Edwiser Localizer plugin.
  */
 class usage_tracking {
 
@@ -44,13 +44,13 @@ class usage_tracking {
         }
 
         // Check user consent.
-        $consent = get_config('local_edwisertranslate', 'enableusagetracking');
+        $consent = get_config('local_edwiserlocalizer', 'enableusagetracking');
         if (!$consent) {
             return;
         }
 
-        $lastsent = isset($CFG->usage_data_last_sent_local_edwisertranslate)
-            ? $CFG->usage_data_last_sent_local_edwisertranslate
+        $lastsent = isset($CFG->usage_data_last_sent_local_edwiserlocalizer)
+            ? $CFG->usage_data_last_sent_local_edwiserlocalizer
             : false;
 
         // Only send if 7 days have passed since last send.
@@ -84,7 +84,7 @@ class usage_tracking {
 
         // Save new timestamp only if API returned success.
         if (!empty($resultarr['success'])) {
-            set_config('usage_data_last_sent_local_edwisertranslate', time() + 604800);
+            set_config('usage_data_last_sent_local_edwiserlocalizer', time() + 604800);
         }
     }
 
@@ -96,7 +96,7 @@ class usage_tracking {
     private function prepare_usage_analytics(): array {
         global $CFG, $DB;
 
-        $pluginconfig = get_config('local_edwisertranslate');
+        $pluginconfig = get_config('local_edwiserlocalizer');
 
         // Get primary admin email.
         $adminemail = '';
@@ -116,7 +116,7 @@ class usage_tracking {
             'site_name'        => !empty($CFG->fullname) ? $CFG->fullname : '',
             'admin_email'      => $adminemail,
             'email'            => !empty($CFG->supportemail) ? $CFG->supportemail : '',
-            'product_name'     => 'Edwiser Translation',
+            'product_name'     => 'Edwiser Localizer',
             'moodle_version'   => $this->get_moodle_major_version(),
             'product_settings' => [
                 'enable'         => !empty($pluginconfig->enable) ? (int) $pluginconfig->enable : 0,
