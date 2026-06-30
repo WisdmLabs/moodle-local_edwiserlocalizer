@@ -81,8 +81,10 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
 #page-admin-setting-local_edwiserlocalizer #admin-translateto br {
   display: none; }
 
-#page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_appearance {
-  line-height: 1.5; }
+#page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_appearance,
+#page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_placement,
+#page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_showicon {
+  line-height: inherit; }
 
 @media (max-width: 426px) {
   .darkmode-mobile-dropdown button {

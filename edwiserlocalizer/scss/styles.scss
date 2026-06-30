@@ -138,8 +138,10 @@ html[nighteyeplgn="active"] {
             display: none;
         }
     }
-    #id_s_local_edwiserlocalizer_appearance  {
-        line-height: 1.5;
+    #id_s_local_edwiserlocalizer_appearance,
+    #id_s_local_edwiserlocalizer_placement,
+    #id_s_local_edwiserlocalizer_showicon {
+        line-height: inherit;
     }
 }
 
