@@ -148,11 +148,9 @@ html[nighteyeplgn="active"] {
         line-height: inherit;
     }
 }
-.pagelayout-course {
-    .VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
-        background-color: unset;
-        box-shadow: unset;
-    }
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+    background-color: unset;
+    box-shadow: unset;
 }
 
 @media (max-width: 426px) {
@@ -242,7 +240,6 @@ body.pagelayout-login {
     #page-footer {
         #local-translator-wrapper {
             position: fixed;
-            padding: 0px;
             bottom: 20px;
             left: 20px;
         }
@@ -255,7 +252,15 @@ body.pagelayout-login {
         }
     }
 }
-
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+    display: none;
+    left: unset !important;
+    right: unset !important;
+    z-index: unset !important;
+    transition-delay: unset !important;
+    -webkit-transition-delay: unset !important;
+    position: unset !important;
+}
 #page-mod-quiz-attempt {
     .submitbtns {
         justify-content: space-between;

@@ -90,7 +90,7 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
 #page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_showicon {
   line-height: inherit; }
 
-.pagelayout-course .VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
   background-color: unset;
   box-shadow: unset; }
 
@@ -147,12 +147,20 @@ body:not(.edw-m502) #usernavigation #darkmode-mobile-menu {
 
 body.pagelayout-login #page-footer #local-translator-wrapper {
   position: fixed;
-  padding: 0px;
   bottom: 20px;
   left: 20px; }
 
 body.pagelayout-login.pagelayout-login.loginleft #local-translator-wrapper .dropdown-menu.show {
   left: -32px !important; }
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none;
+  left: unset !important;
+  right: unset !important;
+  z-index: unset !important;
+  transition-delay: unset !important;
+  -webkit-transition-delay: unset !important;
+  position: unset !important; }
 
 #page-mod-quiz-attempt .submitbtns {
   justify-content: space-between; }
