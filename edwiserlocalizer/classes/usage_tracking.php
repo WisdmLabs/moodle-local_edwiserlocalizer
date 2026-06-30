@@ -58,32 +58,13 @@ class usage_tracking {
             return;
         }
 
-        $analyticsdata = json_encode($this->prepare_usage_analytics());
+        $analyticsdata = $this->prepare_usage_analytics();
 
-        $url = 'https://edwiser.org/wp-json/edwiser_customizations/send_usage_data';
+        $sender = new feedback_sender();
+        $resultarr = $sender->send_feedback($analyticsdata);
 
-        $ch = curl_init();
-        $useragent = $_SERVER['HTTP_USER_AGENT'] . ' - ' . $CFG->wwwroot;
-
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $analyticsdata);
-        curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($analyticsdata),
-        ]);
-
-        $result = curl_exec($ch);
-        $resultarr = [];
-        if ($result) {
-            $resultarr = json_decode($result, true);
-        }
-        curl_close($ch);
-
-        // Save new timestamp only if API returned success.
-        if (!empty($resultarr['success'])) {
+        // Save new timestamp only if the request went through without a network error.
+        if (!isset($resultarr['status']) || $resultarr['status'] !== false) {
             set_config('usage_data_last_sent_local_edwiserlocalizer', time() + 604800);
         }
     }
