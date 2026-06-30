@@ -49,12 +49,10 @@ class usage_tracking {
             return;
         }
 
-        $lastsent = isset($CFG->usage_data_last_sent_local_edwiserlocalizer)
-            ? $CFG->usage_data_last_sent_local_edwiserlocalizer
-            : false;
+        $lastsent = get_config('local_edwiserlocalizer', 'usage_data_last_sent');
 
-        // Only send if 7 days have passed since last send.
-        if ($lastsent && time() <= $lastsent) {
+        // Only send once — ever.
+        if ($lastsent) {
             return;
         }
 
@@ -63,9 +61,9 @@ class usage_tracking {
         $sender = new feedback_sender();
         $resultarr = $sender->send_feedback($analyticsdata);
 
-        // Save new timestamp only if the request went through without a network error.
+        // Mark as sent so we never send again.
         if (!isset($resultarr['status']) || $resultarr['status'] !== false) {
-            set_config('usage_data_last_sent_local_edwiserlocalizer', time() + 604800);
+            set_config('usage_data_last_sent', time(), 'local_edwiserlocalizer');
         }
     }
 
@@ -91,6 +89,22 @@ class usage_tracking {
         if (empty($adminemail) && !empty($CFG->supportemail)) {
             $adminemail = $CFG->supportemail;
         }
+        $placement = !empty($pluginconfig->placement) ? (int) $pluginconfig->placement : 0;
+        $showicon  = !empty($pluginconfig->showicon) ? (int) $pluginconfig->showicon : 0;
+        $appearance = !empty($pluginconfig->appearance) ? (int) $pluginconfig->appearance : 0;
+
+        $placementmap = [
+            0 => get_string('header', 'local_edwiserlocalizer'),
+            1 => get_string('footer', 'local_edwiserlocalizer'),
+        ];
+        $showiconmap = [
+            0 => get_string('across_site', 'local_edwiserlocalizer'),
+            1 => get_string('coursepage', 'local_edwiserlocalizer'),
+        ];
+        $appearancemap = [
+            0 => get_string('light', 'local_edwiserlocalizer'),
+            1 => get_string('dark', 'local_edwiserlocalizer'),
+        ];
 
         return [
             'siteurl'          => $this->detect_site_type() . preg_replace('#^https?://#', '', rtrim($CFG->wwwroot, '/')),
@@ -101,10 +115,10 @@ class usage_tracking {
             'moodle_version'   => $this->get_moodle_major_version(),
             'product_settings' => [
                 'enable'         => !empty($pluginconfig->enable) ? (int) $pluginconfig->enable : 0,
-                'placement'      => !empty($pluginconfig->placement) ? (int) $pluginconfig->placement : 0,
-                'showicon'       => !empty($pluginconfig->showicon) ? (int) $pluginconfig->showicon : 0,
+                'placement'      => $placementmap[$placement] ?? 'Unknown',
+                'showicon'       => $showiconmap[$showicon] ?? 'Unknown',
                 'translateto'    => !empty($pluginconfig->translateto) ? $pluginconfig->translateto : '',
-                'appearance'     => !empty($pluginconfig->appearance) ? (int) $pluginconfig->appearance : 0,
+                'appearance'     => $appearancemap[$appearance] ?? 'Unknown',
                 'version'        => !empty($pluginconfig->version) ? $pluginconfig->version : '',
             ],
         ];
