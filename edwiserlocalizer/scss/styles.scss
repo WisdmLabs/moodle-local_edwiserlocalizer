@@ -220,6 +220,12 @@ body:not(.edw-translate) {
                 padding-left: 12px;
             }
         }
+        #local-translator-wrapper {
+            padding-top: 7px !important;
+            .dropdown-menu.show {
+                left: -35px;
+            }
+        }
     }
 }
 
