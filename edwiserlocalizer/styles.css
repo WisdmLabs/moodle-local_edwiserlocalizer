@@ -86,6 +86,10 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
 #page-admin-setting-local_edwiserlocalizer #id_s_local_edwiserlocalizer_showicon {
   line-height: inherit; }
 
+.pagelayout-course .VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+  background-color: unset;
+  box-shadow: unset; }
+
 @media (max-width: 426px) {
   .darkmode-mobile-dropdown button {
     margin-top: 15px;
