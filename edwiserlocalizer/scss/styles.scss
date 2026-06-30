@@ -195,12 +195,14 @@ body:not(.edw-translate) {
         #langTranslatorDropdown {
             display: flex;
             align-items: center;
-            left: -120px;
             .selected-language {
                 color: #343A40;
                 font-size: 12px !important;
                 font-family: unset !important;
             }
+        }
+        .dropdown-menu.show {
+            left: -65px;
         }
     }
     #usernavigation {
@@ -223,12 +225,6 @@ body:not(.edw-translate) {
         #page-footer {
             #local-translator-wrapper {
                 padding-left: 12px;
-            }
-        }
-        #local-translator-wrapper {
-            padding-top: 7px !important;
-            .dropdown-menu.show {
-                left: -35px;
             }
         }
     }

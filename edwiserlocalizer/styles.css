@@ -117,12 +117,14 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
 
 body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
   display: flex;
-  align-items: center;
-  left: -120px; }
+  align-items: center; }
   body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown .selected-language {
     color: #343A40;
     font-size: 12px !important;
     font-family: unset !important; }
+
+body:not(.edw-translate) #local-translator-wrapper .dropdown-menu.show {
+  left: -65px; }
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
@@ -138,11 +140,7 @@ body:not(.edw-translate) #page-footer {
 
 @media (max-width: 426px) {
   body:not(.edw-translate) #page-footer #local-translator-wrapper {
-    padding-left: 12px; }
-  body:not(.edw-translate) #local-translator-wrapper {
-    padding-top: 7px !important; }
-    body:not(.edw-translate) #local-translator-wrapper .dropdown-menu.show {
-      left: -35px; } }
+    padding-left: 12px; } }
 
 body:not(.edw-m502) #usernavigation #darkmode-mobile-menu {
   right: -8px; }
