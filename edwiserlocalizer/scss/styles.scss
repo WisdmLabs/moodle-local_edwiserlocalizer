@@ -6,8 +6,12 @@
         }
     }
 }
+.edw-translate:has(.drawer-left.show) {
+    #page-footer {
+        z-index: 1016;
+    }
+}
 #page-footer {
-    z-index: 1016;
     #footer-column-1 {
         #local-translator-wrapper {
             padding-top: 20px;
