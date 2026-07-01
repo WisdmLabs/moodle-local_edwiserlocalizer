@@ -456,7 +456,7 @@ define(['jquery'], function ($) {
             applyNoTranslate(config.notranslate_selectors);
         }
         // Always protect Remui floating buttons and footer popover content from Google Translate stripping.
-        applyNoTranslate(['.floating-buttons-wrapper', '.footer-content-popover']);
+        applyNoTranslate(['.footer-content-popover']);
         // Build a set of allowed GT languages from the current dropdown.
         var allowedGtLangs = {};
         $(SELECTORS.LANG_ITEM).each(function () {
