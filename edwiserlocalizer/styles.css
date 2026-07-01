@@ -69,7 +69,7 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
   color: #4C5A73;
   font-size: 14px !important; }
 
-@media (min-width: 426px) {
+@media (min-width: 576px) {
   .darkoreditmode {
     display: none; } }
 
@@ -94,13 +94,13 @@ html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
   background-color: unset;
   box-shadow: unset; }
 
-@media (max-width: 426px) {
+@media (max-width: 576px) {
   .darkmode-mobile-dropdown button {
     margin-top: 15px;
     padding: 0px; }
   #usernavigation #darkmode-mobile-menu {
     min-width: 94px;
-    left: -10px;
+    left: -75px;
     margin-top: 32.5px;
     border: none !important; }
     #usernavigation #darkmode-mobile-menu .nav-darkmode {
@@ -122,7 +122,6 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
     color: #343A40;
     font-size: 12px !important;
     font-family: unset !important; }
-
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
@@ -147,7 +146,6 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
   position: fixed;
   bottom: 20px;
   left: 20px; }
-
 
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
   display: none;

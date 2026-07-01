@@ -111,7 +111,7 @@ html[nighteyeplgn="active"] {
     }
 }
 
-@media (min-width: 426px) {
+@media (min-width: 576px) {
     .darkoreditmode {
         display: none;
     }
@@ -153,7 +153,7 @@ html[nighteyeplgn="active"] {
     box-shadow: unset;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 576px) {
     .darkmode-mobile-dropdown {
         button {
             margin-top: 15px;
@@ -163,7 +163,7 @@ html[nighteyeplgn="active"] {
     #usernavigation {
         #darkmode-mobile-menu {
             min-width: 94px;
-            left: -10px;
+            left: -75px;
             margin-top: 32.5px;
             border: none !important;
             .nav-darkmode {

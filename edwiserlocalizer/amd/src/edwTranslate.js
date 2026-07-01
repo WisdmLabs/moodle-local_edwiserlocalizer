@@ -181,7 +181,7 @@ define(['jquery'], function ($) {
                 }
 
                 const $preset = $('#usernavigation .preset-nav-group').last();
-                if ($(window).width() <= 426) {
+                if ($(window).width() <= 576) {
                     $preset.addClass('d-none');
                 } else {
                     $preset.removeClass('d-none');
