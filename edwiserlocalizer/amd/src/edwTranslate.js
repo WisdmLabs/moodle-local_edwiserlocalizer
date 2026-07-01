@@ -188,7 +188,7 @@ define(['jquery'], function ($) {
                 }
 
                 // MOBILE VIEW
-                if ($(window).width() <= 426) {
+                if ($(window).width() <= 576) {
                     $dropdown.removeClass('d-none');
 
                     // Dark mode add text
