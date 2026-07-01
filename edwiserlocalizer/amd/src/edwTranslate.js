@@ -39,6 +39,9 @@ define(['jquery'], function ($) {
 
                     if ($target.length > 0) {
 
+                        if (footer.selector === '#page-footer #footer-column-1' && $target.hasClass('d-none')) {
+                            continue; // Skip this iteration and move to the next fallback selector
+                        }
                         // Dynamically append or prepend based on the config
                         if (footer.action === 'append') {
                             $target.last().append($wrapper);
@@ -74,6 +77,9 @@ define(['jquery'], function ($) {
                 for (const footer of footerConfig) {
                     const $target = $(footer.selector);
                     if ($target.length > 0) {
+                        if (footer.selector === '#page-footer #footer-column-1' && $target.hasClass('d-none')) {
+                            continue; // Skip this iteration and move to the next fallback selector
+                        }
                         var isAlreadyAppended = (footer.action === 'append' && $target.children().last().is($wrapper));
                         var isAlreadyPrepended = (footer.action === 'prepend' && $target.children().first().is($wrapper));
                         if (!isAlreadyAppended && !isAlreadyPrepended) {

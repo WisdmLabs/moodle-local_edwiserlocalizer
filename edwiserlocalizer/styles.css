@@ -151,7 +151,7 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
   left: 20px; }
 
 body.pagelayout-login.pagelayout-login.loginleft #local-translator-wrapper .dropdown-menu.show {
-  left: -32px !important; }
+  margin-left: -35px !important; }
 
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
   display: none;
