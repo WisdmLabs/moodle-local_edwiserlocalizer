@@ -73,7 +73,7 @@ class usage_tracking {
      * @return array
      */
     private function prepare_usage_analytics(): array {
-        global $CFG, $DB;
+        global $CFG, $DB, $SITE;
 
         $pluginconfig = get_config('local_edwiserlocalizer');
 
@@ -108,7 +108,7 @@ class usage_tracking {
 
         return [
             'siteurl'          => $this->detect_site_type() . preg_replace('#^https?://#', '', rtrim($CFG->wwwroot, '/')),
-            'site_name'        => !empty($CFG->fullname) ? $CFG->fullname : '',
+            'site_name'        => !empty($SITE->fullname) ? $SITE->fullname : '',
             'admin_email'      => $adminemail,
             'email'            => !empty($CFG->supportemail) ? $CFG->supportemail : '',
             'product_name'     => 'Edwiser Localizer',

@@ -99,7 +99,7 @@ class feedback_sender {
      * @return array Formatted payload.
      */
     private function prepare_payload(array $feedbackdata): array {
-        global $CFG;
+        global $CFG, $SITE;
 
         // Build userfeedbacks as {question, answer} objects so the server renders them.
         $userfeedbacks = [];
@@ -125,8 +125,9 @@ class feedback_sender {
             'answer'   => json_encode($feedbackdata['product_settings'] ?? []),
         ];
 
+        $sitename = $feedbackdata['site_name'] ?? '';
         return [
-            'customername' => '',
+            'customername' => $sitename,
             'email'        => $this->get_admin_email(),
             'pluginame'    => 'Edwiser Localizer',
             'licensekey'   => '',
