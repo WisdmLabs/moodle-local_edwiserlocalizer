@@ -61,7 +61,7 @@
         <span class="selected-language">{{currentlang}}</span>
     </button>
 
-    <div class="dropdown-menu" aria-labelledby="langTranslatorDropdown">
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langTranslatorDropdown">
         {{#languages}}
             <a class="dropdown-item lang-switch-link {{#isactive}}active{{/isactive}}" href="{{switchurl}}" data-lang-code="{{code}}" data-gtlang="{{gtcode}}" data-langname="{{name}}">
                 {{name}}

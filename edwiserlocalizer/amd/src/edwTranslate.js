@@ -64,6 +64,11 @@ define(['jquery'], function ($) {
                     $wrapper.css({'right': '80px', 'left': 'unset'});
             }
 
+            if (config.theme_name == "remui" &&
+                $('body').hasClass('pagelayout-login') &&
+                $('body').hasClass('loginright')) {
+                    $('#local-translator-wrapper .dropdown-menu ').removeClass('dropdown-menu-right').addClass('dropdown-menu-end');
+            }
             /**
              * Helper function to add the lang button in footer in the preview mode
              */

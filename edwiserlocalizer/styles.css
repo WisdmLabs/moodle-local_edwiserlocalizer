@@ -123,8 +123,6 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
     font-size: 12px !important;
     font-family: unset !important; }
 
-body:not(.edw-translate) #local-translator-wrapper .dropdown-menu.show {
-  left: -65px; }
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
   padding-top: 15px; }
@@ -150,8 +148,6 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
   bottom: 20px;
   left: 20px; }
 
-body.pagelayout-login.pagelayout-login.loginleft #local-translator-wrapper .dropdown-menu.show {
-  margin-left: -35px !important; }
 
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
   display: none;

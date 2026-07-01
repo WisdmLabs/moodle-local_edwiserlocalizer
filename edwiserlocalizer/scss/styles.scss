@@ -17,7 +17,7 @@
             padding-top: 20px;
         }
     }
-    #local-translator-wrapper {        
+    #local-translator-wrapper {
         #langTranslatorDropdown:not(.theme-dark) {
             border: 1px solid #343A40 !important;
             .icon {
@@ -25,18 +25,18 @@
             }
             .selected-language {
                 color: #343A40 !important;
-            }    
+            }
         }
         .theme-dark{
             background-color: #222222 !important;
             border: 1px solid #D1D1D1 !important;
             .selected-language {
                 color: #D1D1D1 !important;
-            }    
+            }
         }
     }
     .asw-menu {
-        .asw-menu-header,            
+        .asw-menu-header,
         .feedback-heading {
             font {
                 color: #FFFFFF !important;
@@ -199,9 +199,9 @@ body:not(.edw-translate) {
                 font-family: unset !important;
             }
         }
-        .dropdown-menu.show {
-            left: -65px;
-        }
+        // .dropdown-menu.show {
+        //     left: -65px;
+        // }
     }
     #usernavigation {
         #local-translator-wrapper {
@@ -247,11 +247,12 @@ body.pagelayout-login {
     &.pagelayout-login.loginleft {
         #local-translator-wrapper {
             .dropdown-menu.show {
-                margin-left: -35px !important;
+                // left: -32px !important;
             }
         }
     }
 }
+
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
     display: none;
     left: unset !important;
