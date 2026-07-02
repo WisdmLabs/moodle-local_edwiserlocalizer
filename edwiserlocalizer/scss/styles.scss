@@ -14,25 +14,7 @@
 #page-footer {
     #footer-column-1 {
         #local-translator-wrapper {
-            padding-top: 20px;
-        }
-    }
-    #local-translator-wrapper {
-        #langTranslatorDropdown:not(.theme-dark) {
-            border: 1px solid #343A40 !important;
-            .icon {
-                filter: brightness(0.1);
-            }
-            .selected-language {
-                color: #343A40 !important;
-            }
-        }
-        .theme-dark{
-            background-color: #222222 !important;
-            border: 1px solid #D1D1D1 !important;
-            .selected-language {
-                color: #D1D1D1 !important;
-            }
+            // padding-top: 20px;
         }
     }
     .asw-menu {
@@ -47,25 +29,32 @@
 
 html[nighteyeplgn="active"] {
     #local-translator-wrapper {
-        #langTranslatorDropdown {
-            color: white !important;
-            img {
-                filter: brightness(3) !important;
+        #langTranslatorDropdown{
+            border: 1px solid #3D3D3D;
+        }
+        border-radius: 6px;
+        .selected-language {
+            color: #D1D1D1 !important;
+        }
+        :not(.theme-dark) {
+            .icon {
+                filter: brightness(5);
+            }
+            .selected-language {
+                color: #FFFFFF !important;
             }
         }
     }
 }
 
 #local-translator-wrapper {
-    max-width: 66px;
     .dropdown-menu {
         min-width: 81px;
     }
     #langTranslatorDropdown {
         height: 32px;
-        background-color: white !important;
-        border: 1px solid #909BB1;
-        padding: 6px 12px;
+        border: none;
+        padding: 4px 6px;
         background-color: #FFFFFF;
         span {
             color: #343A40;
@@ -87,19 +76,19 @@ html[nighteyeplgn="active"] {
         max-height: 380px;
         overflow-y: auto;
     }
+    .theme-dark{
+        background-color: #222222 !important;
+        border: 1px solid #3D3D3D !important;
+        .selected-language {
+            color: #D1D1D1 !important;
+        }
+    }
 }
 
 #usernavigation {
     #local-translator-wrapper {
         .icon {
             margin-right: 4px;
-        }
-        .theme-dark {
-            border: 1px solid #D1D1D1 !important;
-            background-color: #222222 !important;
-            .selected-language {
-                color: #D1D1D1 !important;
-            }
         }
     }
     .darkmode-mobile-dropdown {
@@ -199,9 +188,6 @@ body:not(.edw-translate) {
                 font-family: unset !important;
             }
         }
-        // .dropdown-menu.show {
-        //     left: -65px;
-        // }
     }
     #usernavigation {
         #local-translator-wrapper {
@@ -215,7 +201,6 @@ body:not(.edw-translate) {
             padding-bottom: 26.97px;
             #langTranslatorDropdown {
                 border-radius: 6px;
-                border: 1px solid #343A40;
             }
         }
     }

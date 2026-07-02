@@ -5,64 +5,54 @@
 .edw-translate:has(.drawer-left.show) #page-footer {
   z-index: 1016; }
 
-#page-footer #footer-column-1 #local-translator-wrapper {
-  padding-top: 20px; }
-
-#page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) {
-  border: 1px solid #343A40 !important; }
-  #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .icon {
-    filter: brightness(0.1); }
-  #page-footer #local-translator-wrapper #langTranslatorDropdown:not(.theme-dark) .selected-language {
-    color: #343A40 !important; }
-
-#page-footer #local-translator-wrapper .theme-dark {
-  background-color: #222222 !important;
-  border: 1px solid #D1D1D1 !important; }
-  #page-footer #local-translator-wrapper .theme-dark .selected-language {
-    color: #D1D1D1 !important; }
-
 #page-footer .asw-menu .asw-menu-header font,
 #page-footer .asw-menu .feedback-heading font {
   color: #FFFFFF !important; }
 
-html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
-  color: white !important; }
-  html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown img {
-    filter: brightness(3) !important; }
+html[nighteyeplgn="active"] #local-translator-wrapper {
+  border-radius: 6px; }
+  html[nighteyeplgn="active"] #local-translator-wrapper #langTranslatorDropdown {
+    border: 1px solid #3D3D3D; }
+  html[nighteyeplgn="active"] #local-translator-wrapper .selected-language {
+    color: #D1D1D1 !important; }
+  html[nighteyeplgn="active"] #local-translator-wrapper :not(.theme-dark) .icon {
+    filter: brightness(5); }
+  html[nighteyeplgn="active"] #local-translator-wrapper :not(.theme-dark) .selected-language {
+    color: #FFFFFF !important; }
 
-#local-translator-wrapper {
-  max-width: 66px; }
-  #local-translator-wrapper .dropdown-menu {
-    min-width: 81px; }
-  #local-translator-wrapper #langTranslatorDropdown {
-    height: 32px;
-    background-color: white !important;
-    border: 1px solid #909BB1;
-    padding: 6px 12px;
-    background-color: #FFFFFF; }
-    #local-translator-wrapper #langTranslatorDropdown span {
-      color: #343A40;
-      border-radius: 6px;
-      font-size: 14px;
-      line-height: 20px; }
-    #local-translator-wrapper #langTranslatorDropdown .icon {
-      margin-right: 4px;
-      height: 18px;
-      width: 18px !important; }
-  #local-translator-wrapper .dropdown-toggle::after {
-    content: none !important; }
-  #local-translator-wrapper .dropdown-menu.show {
-    max-height: 380px;
-    overflow-y: auto; }
+#local-translator-wrapper .dropdown-menu {
+  min-width: 81px; }
+
+#local-translator-wrapper #langTranslatorDropdown {
+  height: 32px;
+  border: none;
+  padding: 4px 6px;
+  background-color: #FFFFFF; }
+  #local-translator-wrapper #langTranslatorDropdown span {
+    color: #343A40;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px; }
+  #local-translator-wrapper #langTranslatorDropdown .icon {
+    margin-right: 4px;
+    height: 18px;
+    width: 18px !important; }
+
+#local-translator-wrapper .dropdown-toggle::after {
+  content: none !important; }
+
+#local-translator-wrapper .dropdown-menu.show {
+  max-height: 380px;
+  overflow-y: auto; }
+
+#local-translator-wrapper .theme-dark {
+  background-color: #222222 !important;
+  border: 1px solid #3D3D3D !important; }
+  #local-translator-wrapper .theme-dark .selected-language {
+    color: #D1D1D1 !important; }
 
 #usernavigation #local-translator-wrapper .icon {
   margin-right: 4px; }
-
-#usernavigation #local-translator-wrapper .theme-dark {
-  border: 1px solid #D1D1D1 !important;
-  background-color: #222222 !important; }
-  #usernavigation #local-translator-wrapper .theme-dark .selected-language {
-    color: #D1D1D1 !important; }
 
 #usernavigation .darkmode-mobile-dropdown .dm-mobile-text,
 #usernavigation .darkmode-mobile-dropdown .em-mobile-text {
@@ -132,8 +122,7 @@ body:not(.edw-translate) #page-footer {
     left: 24px;
     padding-bottom: 26.97px; }
     body:not(.edw-translate) #page-footer #local-translator-wrapper #langTranslatorDropdown {
-      border-radius: 6px;
-      border: 1px solid #343A40; }
+      border-radius: 6px; }
 
 @media (max-width: 426px) {
   body:not(.edw-translate) #page-footer #local-translator-wrapper {
