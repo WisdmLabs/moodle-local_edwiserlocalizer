@@ -33,7 +33,8 @@ class usage_tracking {
      * Send usage analytics to Edwiser.
      *
      * Only runs for site admins, respects the enableusagetracking setting,
-     * and throttles to once every 7 days.
+     * defers the first send until 2 days after install, and only re-sends
+     * when the 'translateto' language list is modified.
      */
     public function send_usage_analytics() {
         global $CFG, $USER;
@@ -49,10 +50,26 @@ class usage_tracking {
             return;
         }
 
+        $firstinstall = get_config('local_edwiserlocalizer', 'usage_data_first_install_time');
         $lastsent = get_config('local_edwiserlocalizer', 'usage_data_last_sent');
 
-        // Only send once — ever.
-        if ($lastsent) {
+        // Fresh install: record the first encounter and wait 2 days before sending.
+        if (!$firstinstall) {
+            set_config('usage_data_first_install_time', time(), 'local_edwiserlocalizer');
+            return;
+        }
+
+        // Enforce the 2-day deferral from first install / first tracking encounter.
+        $twodayseconds = 2 * 24 * 60 * 60;
+        if (time() - $firstinstall < $twodayseconds) {
+            return;
+        }
+
+        $lasttranslateto = get_config('local_edwiserlocalizer', 'usage_data_last_translateto');
+        $currenttranslateto = get_config('local_edwiserlocalizer', 'translateto');
+
+        // After the initial send, only re-trigger when the language list changes.
+        if ($lastsent && $lasttranslateto === $currenttranslateto) {
             return;
         }
 
@@ -61,9 +78,11 @@ class usage_tracking {
         $sender = new feedback_sender();
         $resultarr = $sender->send_feedback($analyticsdata);
 
-        // Mark as sent so we never send again.
+        // Mark as sent and snapshot the current translateto value so we know
+        // whether it changes for the next potential re-send.
         if (!isset($resultarr['status']) || $resultarr['status'] !== false) {
             set_config('usage_data_last_sent', time(), 'local_edwiserlocalizer');
+            set_config('usage_data_last_translateto', $currenttranslateto, 'local_edwiserlocalizer');
         }
     }
 
