@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'local_edwiserlocalizer';
-$plugin->release      = '1.0';
-$plugin->version      = 2026060506;
+$plugin->release      = '1.0.0';
+$plugin->version      = 2026070300;
 $plugin->requires     = 2022041900;
 $plugin->maturity     = MATURITY_STABLE;
