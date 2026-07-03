@@ -114,7 +114,7 @@ body:not(.edw-translate) #local-translator-wrapper #langTranslatorDropdown {
     font-family: unset !important; }
 
 body:not(.edw-translate) #usernavigation #local-translator-wrapper {
-  padding-top: 15px; }
+  margin: auto; }
 
 body:not(.edw-translate) #page-footer {
   z-index: 0; }
