@@ -1,0 +1,290 @@
+#page-admin-setting-local_edwiserlocalizer {
+    #admin-translateto {
+        .defaultsnext {
+            display: flex !important;
+            flex-direction: column-reverse !important;
+        }
+    }
+}
+.edw-translate:has(.drawer-left.show) {
+    #page-footer {
+        z-index: 1016;
+    }
+}
+#page-footer {
+    #footer-column-1 {
+        #local-translator-wrapper {
+            // padding-top: 20px;
+        }
+    }
+    .asw-menu {
+        .asw-menu-header,
+        .feedback-heading {
+            font {
+                color: #FFFFFF !important;
+            }
+        }
+    }
+}
+
+html[nighteyeplgn="active"] {
+    #local-translator-wrapper {
+        #langTranslatorDropdown{
+            border: 1px solid #3D3D3D;
+        }
+        border-radius: 6px;
+        .selected-language {
+            color: #D1D1D1 !important;
+        }
+        :not(.theme-dark) {
+            .icon {
+                filter: brightness(5);
+            }
+            .selected-language {
+                color: #FFFFFF !important;
+            }
+        }
+    }
+}
+
+#local-translator-wrapper {
+    .dropdown-menu {
+        min-width: 81px;
+    }
+    #langTranslatorDropdown {
+        height: 32px;
+        border: none;
+        padding: 4px 6px;
+        background-color: #FFFFFF;
+        span {
+            color: #343A40;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .icon {
+            margin-right: 4px;
+            height: 18px;
+            width: 18px !important;
+        }
+    }
+
+    .dropdown-toggle::after {
+        content: none !important;
+    }
+    .dropdown-menu.show {
+        max-height: 380px;
+        overflow-y: auto;
+    }
+    .theme-dark{
+        background-color: #222222 !important;
+        border: 1px solid #3D3D3D !important;
+        .selected-language {
+            color: #D1D1D1 !important;
+        }
+    }
+}
+
+#usernavigation {
+    #local-translator-wrapper {
+        .icon {
+            margin-right: 4px;
+        }
+    }
+    .darkmode-mobile-dropdown {
+        .dm-mobile-text,
+        .em-mobile-text {
+            color: #4C5A73;
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .darkoreditmode {
+        display: none;
+    }
+}
+
+@media (min-width: 319px) {
+    .darkoreditmode {
+        display: none;
+    }
+    #page-admin-setting-local_edwiserlocalizer {
+        #admin-translateto {
+            .defaultsnext {
+                .form-autocomplete-input {
+                    width: fit-content !important;
+                }
+            }
+        }
+    }
+}
+#page-admin-setting-local_edwiserlocalizer {
+    #admin-translateto {
+        .defaultsnext {
+            .form-autocomplete-selection {
+                margin-bottom: 0px !important;
+            }
+        }
+        br {
+            display: none;
+        }
+    }
+    #id_s_local_edwiserlocalizer_appearance,
+    #id_s_local_edwiserlocalizer_placement,
+    #id_s_local_edwiserlocalizer_showicon {
+        line-height: inherit;
+    }
+}
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+    background-color: unset;
+    box-shadow: unset;
+}
+
+@media (max-width: 576px) {
+    .darkmode-mobile-dropdown {
+        button {
+            margin-top: 15px;
+            padding: 0px;
+        }
+    }
+    #usernavigation {
+        #darkmode-mobile-menu {
+            min-width: 94px;
+            left: -75px;
+            margin-top: 32.5px;
+            border: none !important;
+            .nav-darkmode {
+                padding: 12px 14px;
+            }
+            form {
+                padding: 12px 14px;
+            }
+        }
+        #langTranslatorDropdown {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }
+    #local-translator-wrapper {
+        .selected-language {
+            display: none;
+        }
+        .icon {
+            margin: 0px !important;
+        }
+    }
+}
+
+body:not(.edw-translate) {
+    #local-translator-wrapper {
+        #langTranslatorDropdown {
+            display: flex;
+            align-items: center;
+            .selected-language {
+                color: #343A40;
+                font-size: 12px !important;
+                font-family: unset !important;
+            }
+        }
+    }
+    #usernavigation {
+        #local-translator-wrapper {
+            // padding-top: 15px;
+            margin:auto;
+        }
+    }
+    #page-footer {
+        z-index: 0;
+        #local-translator-wrapper {
+            left: 24px;
+            padding-bottom: 26.97px;
+            #langTranslatorDropdown {
+                border-radius: 6px;
+            }
+        }
+    }
+    @media (max-width: 426px) {
+        #page-footer {
+            #local-translator-wrapper {
+                padding-left: 12px;
+            }
+        }
+    }
+}
+
+body:not(.edw-m502) {
+    #usernavigation {
+        #darkmode-mobile-menu {
+            right: -8px;
+        }
+    }
+}
+
+body.pagelayout-login {
+    #page-footer {
+        #local-translator-wrapper {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+    }
+    &.pagelayout-login.loginleft {
+        #local-translator-wrapper {
+            .dropdown-menu.show {
+                // left: -32px !important;
+            }
+        }
+    }
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+    display: none;
+    left: unset !important;
+    right: unset !important;
+    z-index: unset !important;
+    transition-delay: unset !important;
+    -webkit-transition-delay: unset !important;
+    position: unset !important;
+}
+#page-mod-quiz-attempt {
+    .submitbtns {
+        justify-content: space-between;
+    }
+}
+
+// ============================================
+// HIDE GOOGLE TRANSLATE INJECTED UI
+// ============================================
+.goog-te-banner-frame {
+    display: none !important;
+}
+#goog-gt-tt {
+    display: none !important;
+}
+.goog-te-balloon-frame {
+    display: none !important;
+}
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.goog-te-combo {
+    display: none !important;
+}
+.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0 !important;
+}
+
+/* Prevent font tags from altering layout or typography */
+font[style*="vertical-align: inherit"]  {
+    vertical-align: initial !important;
+}

@@ -1,0 +1,66 @@
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * English language pack for local_edwiserlanguagetranslation
+ *
+ * @package    local_edwiserlocalizer
+ * @category   string
+ * @copyright  2026 YOUR NAME <your@email.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+$string['pluginname'] = 'Edwiser Localizer';
+$string['local_edwiserlocalizer'] = 'Edwiser Localizer';
+$string['enable'] = 'Enable';
+$string['enable_desc'] = 'Enabling this will display the language translation on your site.';
+$string['placement'] = 'Placement';
+$string['placement_desc'] = 'Choose where the icon should appear on your site.';
+$string['header'] = 'Header';
+$string['footer'] = 'Footer';
+$string['showicon'] = 'Show Icon';
+$string['showicon_desc'] = 'Show icon across site or only on course pages.';
+$string['across_site'] = 'Across site';
+$string['coursepage'] = 'Course page';
+$string['translateto'] = 'Translate To';
+$string['translateto_desc'] = 'English is the default language. Add your preferred languages for translation.';
+$string['chooselanguages'] = 'Choose Languages';
+$string['appearance'] = 'Appearance';
+$string['appearance_desc'] = 'Choose the appearance of the language switcher to match your site.';
+$string['light'] = 'Light';
+$string['dark'] = 'Dark';
+$string['on'] = 'On';
+$string['off'] = 'Off';
+$string['error_nolanguage'] = 'You must select at least one language.';
+$string['cachedef_translation'] = 'Edwiser Localizer Cache';
+$string['notranslate_selectors'] = 'Exclude from translation';
+$string['notranslate_selectors_desc'] = 'Enter CSS selectors for elements that should not be translated by Google Translate. You can separate selectors with commas or place one per line. For example: <code>.block_calendar_month, #page-header</code> or <code>.course-section .summary</code>.';
+$string['enableusagetracking'] = 'Enable Usage Tracking';
+$string['enableusagetrackingdesc'] = '<strong>USAGE TRACKING NOTICE</strong>
+
+<p>By enabling this feature, you agree to allow Edwiser to collect anonymous usage data to help improve the product.</p>
+
+<p>The following data will be sent periodically:</p>
+<ul>
+    <li>Site URL and site name</li>
+    <li>Admin email and support email</li>
+    <li>Moodle version</li>
+    <li>Plugin settings</li>
+</ul>
+
+<p>No personal or student data is collected.</p>';
