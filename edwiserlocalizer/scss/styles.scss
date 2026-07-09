@@ -254,6 +254,27 @@ body.pagelayout-login {
     }
 }
 
+@media (max-width: 376px) {
+    .edw-translate.notloggedin {
+        #usernavigation {
+            gap: 5px;
+            > div:first-child {
+                gap: 0px !important;
+                #lang-menu-toggle {
+                    padding-right: 8px;
+                }
+            }
+            .usermenu-wrapper {
+                gap: 5px;
+                .usermenu {
+                    gap: 9px !important;
+                }
+            }
+    
+        }
+    }
+}
+
 // ============================================
 // HIDE GOOGLE TRANSLATE INJECTED UI
 // ============================================
