@@ -157,13 +157,13 @@ function local_edwiserlocalizer_get_language(): array
 {
     global $PAGE;
 
-    $userChossenLang = get_config('local_edwiserlocalizer', 'translateto');
+    $user_chosen_lang = get_config('local_edwiserlocalizer', 'translateto');
     // if no lang choosen add english
-    if (empty($userChossenLang)) {
-        $userChossenLang = 'en';
+    if (empty($user_chosen_lang)) {
+        $user_chosen_lang = 'en';
     }
 
-    $langCodes = explode(',', $userChossenLang);
+    $langCodes = explode(',', $user_chosen_lang);
 
     //define lang array
     $available_lang =
