@@ -180,12 +180,6 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
 .goog-te-combo {
   display: none !important; }
 
-.skiptranslate {
-  display: none !important; }
-
-body {
-  top: 0 !important; }
-
 /* Prevent font tags from altering layout or typography */
 font[style*="vertical-align: inherit"] {
   vertical-align: initial !important; }

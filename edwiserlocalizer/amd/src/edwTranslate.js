@@ -378,9 +378,7 @@ define(['jquery'], function ($) {
             '.goog-tooltip:hover { display: none !important; }',
             '.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }',
             '#google_translate_element2 { display: none !important; }',
-            '.goog-te-combo { display: none !important; }',
-            'body { top: 0 !important; }',
-            '.skiptranslate { display: none !important; }'
+            '.goog-te-combo { display: none !important; }'
         ].join('\n');
         document.head.appendChild(css);
     }
