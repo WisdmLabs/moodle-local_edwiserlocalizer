@@ -52,6 +52,7 @@ $string['cachedef_translation'] = 'Edwiser Localizer Cache';
 $string['notranslate_selectors'] = 'Exclude from translation';
 $string['notranslate_selectors_desc'] = 'Enter CSS selectors for elements that should not be translated by Google Translate. You can separate selectors with commas or place one per line. For example: <code>.block_calendar_month, #page-header</code> or <code>.course-section .summary</code>.';
 $string['enableusagetracking'] = 'Enable Usage Tracking';
+$string['privacy:metadata'] = 'The local_edwiserlocalizer plugin does not store any personal data.';
 $string['enableusagetrackingdesc'] = '<strong>USAGE TRACKING NOTICE</strong>
 
 <p>By enabling this feature, you agree to allow Edwiser to collect anonymous usage data to help improve the product.</p>
