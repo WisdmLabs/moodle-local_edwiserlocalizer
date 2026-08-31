@@ -49,22 +49,17 @@ class feedback_sender {
         $payload = $this->prepare_payload($feedbackdata);
         $json = json_encode($payload);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, self::ENDPOINT);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $curl = new \curl();
+        $curl->setHeader([
             'Content-Type: application/json',
-            'Content-Length: ' . strlen($json),
-            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
             'Accept: application/json',
         ]);
 
-        $result = curl_exec($ch);
-        $errno = curl_errno($ch);
-        $error = curl_error($ch);
-        curl_close($ch);
+        $result = $curl->post(self::ENDPOINT, $json, [
+            'CURLOPT_USERAGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+        ]);
+        $errno = $curl->get_errno();
+        $error = $curl->error;
 
         if ($errno !== 0) {
             return [
