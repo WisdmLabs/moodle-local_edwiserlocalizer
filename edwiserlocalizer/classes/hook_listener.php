@@ -14,6 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Hook callbacks for adding language button in footer
+ *
+ *  @package    local_edwiserlocalizer
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
+ */
+
 namespace local_edwiserlocalizer;
 
 defined('MOODLE_INTERNAL') || die();

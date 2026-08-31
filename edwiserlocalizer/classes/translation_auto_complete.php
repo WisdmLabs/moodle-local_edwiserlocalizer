@@ -17,9 +17,10 @@
 /**
  * TODO describe file translationautocomplete
  *
- * @package    core
- * @copyright  2026 Harshal <your@email.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @package    core
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
  */
 
 namespace local_edwiserlocalizer;

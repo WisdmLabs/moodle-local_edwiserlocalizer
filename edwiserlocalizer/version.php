@@ -17,9 +17,10 @@
 /**
  * Version information for Edwiser Language Translation
  *
- * @package    local_edwiserlocalizer
- * @copyright  2026 YOUR NAME <your@email.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @package    local_edwiserlocalizer
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
  */
 
 defined('MOODLE_INTERNAL') || die();
