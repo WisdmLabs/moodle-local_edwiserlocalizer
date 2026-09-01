@@ -366,6 +366,17 @@ define(['jquery'], function ($) {
     }
 
     /**
+     * Add a custom marker class to all Google Translate injected elements.
+     */
+    function markSkipTranslateElements() {
+        var mark = function ($ctx) { $ctx.find('.skiptranslate').addBack('.skiptranslate').addClass('edw-localizer'); };
+        mark($(document.body));
+        new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) { $(m.addedNodes).each(function () { mark($(this)); }); });
+        }).observe(document.body, { childList: true, subtree: true });
+    }
+
+    /**
      * Hide Google Translate top banner and injected UI elements.
      */
     function hideGoogleBranding() {
@@ -378,7 +389,8 @@ define(['jquery'], function ($) {
             '.goog-tooltip:hover { display: none !important; }',
             '.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }',
             '#google_translate_element2 { display: none !important; }',
-            '.goog-te-combo { display: none !important; }'
+            '.goog-te-combo { display: none !important; }',
+            '.edw-localizer { display: none !important; }'
         ].join('\n');
         document.head.appendChild(css);
     }
@@ -467,6 +479,7 @@ define(['jquery'], function ($) {
      */
     function initGoogleTranslate() {
         hideGoogleBranding();
+        markSkipTranslateElements();
         loadGoogleTranslate();
 
         // Apply admin-defined "do not translate" selectors.
