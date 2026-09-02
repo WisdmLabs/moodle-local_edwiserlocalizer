@@ -183,6 +183,9 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
 .edw-localizer {
   display: none !important; }
 
+.edw-translate {
+  display: none !important; }
+
 /* Prevent font tags from altering layout or typography */
 font[style*="vertical-align: inherit"] {
   vertical-align: initial !important; }

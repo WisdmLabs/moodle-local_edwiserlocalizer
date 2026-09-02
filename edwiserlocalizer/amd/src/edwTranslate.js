@@ -390,6 +390,7 @@ define(['jquery'], function ($) {
             '.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }',
             '#google_translate_element2 { display: none !important; }',
             '.goog-te-combo { display: none !important; }',
+            '.edw-translate { display: none !important; }',
             '.edw-localizer { display: none !important; }'
         ].join('\n');
         document.head.appendChild(css);
