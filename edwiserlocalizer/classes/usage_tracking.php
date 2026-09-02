@@ -17,9 +17,10 @@
 /**
  * Edwiser Localizer Usage Tracking.
  *
- * @package    local_edwiserlocalizer
- * @copyright  2026 Wisdmlabs
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @package    local_edwiserlocalizer
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
  */
 
 namespace local_edwiserlocalizer;

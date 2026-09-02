@@ -148,6 +148,18 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
 #page-mod-quiz-attempt .submitbtns {
   justify-content: space-between; }
 
+@media (max-width: 376px) {
+  .edw-translate.notloggedin #usernavigation {
+    gap: 5px; }
+    .edw-translate.notloggedin #usernavigation > div:first-child {
+      gap: 0px !important; }
+      .edw-translate.notloggedin #usernavigation > div:first-child #lang-menu-toggle {
+        padding-right: 8px; }
+    .edw-translate.notloggedin #usernavigation .usermenu-wrapper {
+      gap: 5px; }
+      .edw-translate.notloggedin #usernavigation .usermenu-wrapper .usermenu {
+        gap: 9px !important; } }
+
 .goog-te-banner-frame {
   display: none !important; }
 
@@ -168,10 +180,10 @@ body.pagelayout-login #page-footer #local-translator-wrapper {
 .goog-te-combo {
   display: none !important; }
 
-.skiptranslate {
+.edw-localizer {
   display: none !important; }
 
-body {
+.edw-translate {
   top: 0 !important; }
 
 /* Prevent font tags from altering layout or typography */

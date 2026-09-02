@@ -17,15 +17,16 @@
 /**
  * Version information for Edwiser Language Translation
  *
- * @package    local_edwiserlocalizer
- * @copyright  2026 YOUR NAME <your@email.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @package    local_edwiserlocalizer
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component    = 'local_edwiserlocalizer';
-$plugin->release      = '1.0.0';
-$plugin->version      = 2026070300;
+$plugin->release      = '1.0.1';
+$plugin->version      = 2026090200;
 $plugin->requires     = 2022041900;
 $plugin->maturity     = MATURITY_STABLE;

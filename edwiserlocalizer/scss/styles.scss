@@ -254,6 +254,27 @@ body.pagelayout-login {
     }
 }
 
+@media (max-width: 376px) {
+    .edw-translate.notloggedin {
+        #usernavigation {
+            gap: 5px;
+            > div:first-child {
+                gap: 0px !important;
+                #lang-menu-toggle {
+                    padding-right: 8px;
+                }
+            }
+            .usermenu-wrapper {
+                gap: 5px;
+                .usermenu {
+                    gap: 9px !important;
+                }
+            }
+    
+        }
+    }
+}
+
 // ============================================
 // HIDE GOOGLE TRANSLATE INJECTED UI
 // ============================================
@@ -277,10 +298,10 @@ body.pagelayout-login {
 .goog-te-combo {
     display: none !important;
 }
-.skiptranslate {
+.edw-localizer {
     display: none !important;
 }
-body {
+.edw-translate {
     top: 0 !important;
 }
 

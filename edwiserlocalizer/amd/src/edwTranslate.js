@@ -12,7 +12,13 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
+/**
+ *  Adds the ellipsis, language translation api integration and language button in footer
+ *
+ *  @copyright (c) 2022 WisdmLabs (https://wisdmlabs.com/) <support@wisdmlabs.com>
+ *  @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @author     Harshal Thakare
+ */
 define(['jquery'], function ($) {
     return {
         init: function (config) {
@@ -360,6 +366,17 @@ define(['jquery'], function ($) {
     }
 
     /**
+     * Add a custom marker class to all Google Translate injected elements.
+     */
+    function markSkipTranslateElements() {
+        var mark = function ($ctx) { $ctx.find('.skiptranslate').addBack('.skiptranslate').addClass('edw-localizer'); };
+        mark($(document.body));
+        new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) { $(m.addedNodes).each(function () { mark($(this)); }); });
+        }).observe(document.body, { childList: true, subtree: true });
+    }
+
+    /**
      * Hide Google Translate top banner and injected UI elements.
      */
     function hideGoogleBranding() {
@@ -373,8 +390,8 @@ define(['jquery'], function ($) {
             '.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }',
             '#google_translate_element2 { display: none !important; }',
             '.goog-te-combo { display: none !important; }',
-            'body { top: 0 !important; }',
-            '.skiptranslate { display: none !important; }'
+            '.edw-translate { top: 0 !important; }',
+            '.edw-localizer { display: none !important; }'
         ].join('\n');
         document.head.appendChild(css);
     }
@@ -463,6 +480,7 @@ define(['jquery'], function ($) {
      */
     function initGoogleTranslate() {
         hideGoogleBranding();
+        markSkipTranslateElements();
         loadGoogleTranslate();
 
         // Apply admin-defined "do not translate" selectors.
